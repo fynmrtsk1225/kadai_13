@@ -1,0 +1,136 @@
+' option + D でプレビュー
+' コマンドパレット　export Current File Diagrams
+' titleは宣言文に使われているので、クオーテーションでごまかし
+' アソシエーションの向き、左 -l-, 右 -r-, 上 -u-, 下 -d-
+
+@startuml yonde
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "**users**" as users {
+  + id [PK]
+  --
+  name
+  email
+  encrypted_password
+  admin
+  reset_password_token
+  reset_password_sent_at
+  remember_created_at
+  created_at
+  updated_at
+  provider
+  uid
+}
+
+entity "**profiles**" as profiles {
+  + id [PK]
+  # user_id [FK]
+  --
+  image
+  content
+  age
+  constitution
+  floor
+  square
+  created_at
+  updated_at
+}
+
+entity "**rooms**" as rooms {
+  + id [PK]
+  # user_id [FK]
+  --
+  name
+  color
+  width
+  depth
+  height
+  image
+  content
+  created_at
+  updated_at
+}
+
+entity "**relationships**" as relationships {
+  + id [PK]
+  # follower_id (user_id) [FK]
+  # following_id (user_id) [FK]
+  --
+  created_at
+  updated_at
+}
+
+entity "**pictures**" as pictures	 {
+  + id [PK]
+  # user_id [FK]
+  --
+  image
+  content
+  created_at
+  updated_at
+}
+
+entity "**favorited_pictures**" as favorited_pictures {
+  + id [PK]
+  # user_id [FK]
+  # picture_id [FK]
+  --
+  created_at
+  updated_at
+}
+
+entity "**products**" as products {
+  + id [PK]
+  # picture_id [FK]
+  --
+  name
+  product_url
+  image_url
+  image
+  created_at
+  updated_at
+}
+
+entity "**favorited_products**" as favorited_products {
+  + id [PK]
+  # user_id [FK]
+  # product_id [FK]
+  --
+  created_at
+  updated_at
+}
+
+entity "**tags**" as tags {
+  + id [PK]
+  --
+  name
+  created_at
+  updated_at
+}
+
+entity "**picture_tags**" as picture_tags {
+  + id [PK]
+  # tag_id [FK]
+  # picture_id [FK]
+  --
+  created_at
+  updated_at
+}
+
+users ||-l-o{ relationships
+users ||-l-o{ rooms
+users ||-r-o{ favorited_pictures
+pictures ||-u-o{ favorited_pictures
+pictures ||--o{ products
+tags ||-l-o{ picture_tags
+products ||-l-o{ favorited_products
+users ||-d-o{ favorited_products
+users ||--o{ pictures
+pictures ||-r-o{ picture_tags
+users ||--|{ profiles
+
+@enduml
