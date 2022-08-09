@@ -39,11 +39,14 @@ https://docs.google.com/spreadsheets/d/18jRYiWiDVJL4ZpOpMf_mTXepG0R8MVs1DTDpZOwl
 
 ## ER図
 ---
-https://user-images.githubusercontent.com/104858118/183602199-22b117b1-e775-435a-9a1e-71c74bd31d89.png
+https://user-images.githubusercontent.com/104858118/183686711-b6d1a845-71ee-4a0a-b64a-38c60c8967f4.png
+
+<img width="982" alt="スクリーンショット 2022-08-10 0 06 34" src="https://user-images.githubusercontent.com/104858118/183686711-b6d1a845-71ee-4a0a-b64a-38c60c8967f4.png">
 
 ## 画面遷移図
 ---
 https://user-images.githubusercontent.com/104858118/183601928-81b3b1df-e4b5-4210-9887-3dcb63d8e6ad.png
 
+<img width="1058" alt="スクリーンショット 2022-08-09 17 13 05" src="https://user-images.githubusercontent.com/104858118/183644131-35867f9a-07d5-404f-8afd-36b3ddb820f7.png">
 ## ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/18jRYiWiDVJL4ZpOpMf_mTXepG0R8MVs1DTDpZOwlwTE/edit#gid=1379529323

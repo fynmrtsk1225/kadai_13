@@ -21,7 +21,6 @@ entity "**users**" as users {
   reset_password_sent_at
   remember_created_at
   created_at
-  updated_at
   provider
   uid
 }
@@ -37,7 +36,6 @@ entity "**profiles**" as profiles {
   floor
   square
   created_at
-  updated_at
 }
 
 entity "**rooms**" as rooms {
@@ -52,7 +50,6 @@ entity "**rooms**" as rooms {
   image
   content
   created_at
-  updated_at
 }
 
 entity "**relationships**" as relationships {
@@ -61,7 +58,6 @@ entity "**relationships**" as relationships {
   # following_id (user_id) [FK]
   --
   created_at
-  updated_at
 }
 
 entity "**pictures**" as pictures	 {
@@ -71,7 +67,6 @@ entity "**pictures**" as pictures	 {
   image
   content
   created_at
-  updated_at
 }
 
 entity "**favorited_pictures**" as favorited_pictures {
@@ -80,7 +75,6 @@ entity "**favorited_pictures**" as favorited_pictures {
   # picture_id [FK]
   --
   created_at
-  updated_at
 }
 
 entity "**products**" as products {
@@ -92,7 +86,6 @@ entity "**products**" as products {
   image_url
   image
   created_at
-  updated_at
 }
 
 entity "**favorited_products**" as favorited_products {
@@ -101,7 +94,6 @@ entity "**favorited_products**" as favorited_products {
   # product_id [FK]
   --
   created_at
-  updated_at
 }
 
 entity "**tags**" as tags {
@@ -109,7 +101,6 @@ entity "**tags**" as tags {
   --
   name
   created_at
-  updated_at
 }
 
 entity "**picture_tags**" as picture_tags {
@@ -118,7 +109,6 @@ entity "**picture_tags**" as picture_tags {
   # picture_id [FK]
   --
   created_at
-  updated_at
 }
 
 users ||-l-o{ relationships
@@ -131,6 +121,6 @@ products ||-l-o{ favorited_products
 users ||-d-o{ favorited_products
 users ||--o{ pictures
 pictures ||-r-o{ picture_tags
-users ||--|{ profiles
+users ||--|| profiles
 
 @enduml
