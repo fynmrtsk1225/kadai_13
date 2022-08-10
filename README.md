@@ -39,9 +39,9 @@ https://docs.google.com/spreadsheets/d/18jRYiWiDVJL4ZpOpMf_mTXepG0R8MVs1DTDpZOwl
 
 ## ER図
 ---
-https://user-images.githubusercontent.com/104858118/183686711-b6d1a845-71ee-4a0a-b64a-38c60c8967f4.png
+https://user-images.githubusercontent.com/104858118/183783862-5f0fe803-da17-4c48-a844-9a0f1f25f955.png
 
-<img width="982" alt="スクリーンショット 2022-08-10 0 06 34" src="https://user-images.githubusercontent.com/104858118/183686711-b6d1a845-71ee-4a0a-b64a-38c60c8967f4.png">
+<img width="989" alt="スクリーンショット 2022-08-10 9 21 46" src="https://user-images.githubusercontent.com/104858118/183783862-5f0fe803-da17-4c48-a844-9a0f1f25f955.png">
 
 ## 画面遷移図
 ---
