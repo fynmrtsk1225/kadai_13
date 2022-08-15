@@ -14,14 +14,6 @@ module Myru
     config.load_defaults 6.0
 
     config.generators do |g|
-      g.assets false
-      g.helper false
-      g.stylesheets false
-      g.javascripts true
-      g.test_framework false
-    end
-
-    config.generators do |g|
       g.test_framework :rspec,
                       model_specs: true,
                       view_specs: false,
