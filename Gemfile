@@ -26,6 +26,9 @@ gem 'devise'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'cancancan'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

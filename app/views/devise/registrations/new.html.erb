@@ -5,8 +5,10 @@
 
   <%= f.fields_for :profile do |f| %>
     <div class="field">
-      <%= f.label :content %><br />
-      <%= f.text_area :content %>
+      <%= f.label :image %><br />
+      <%= image_tag(@profile.image.url) if @profile.image && @profile.image.url %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
     </div>
   <% end %>
 
