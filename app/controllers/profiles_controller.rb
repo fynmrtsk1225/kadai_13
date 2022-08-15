@@ -19,6 +19,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:title, :content, :deadline, :created_at, :priority, :status)
+    params.require(:profile).permit(:image, :image_cache, :content, :age, :constitution, :floor, :square)
   end
 end
