@@ -8,8 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Myru
   class Application < Rails::Application
-    config.time_zone = "Tokyo"
-    config.active_record.default_timezone = :local
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
@@ -22,6 +20,7 @@ module Myru
                       controller_specs: false,
                       request_specs: false
     end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
