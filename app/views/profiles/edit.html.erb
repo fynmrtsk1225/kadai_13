@@ -1,0 +1,50 @@
+<h1>profile編集</h1>
+
+<%= form_with(model: @profile, local: true) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% @profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="image_field">
+    <%= f.label :image %>
+    <%= image_tag(@profile.image.url) if @profile.image && @profile.image.url %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.select :age, Profile.ages.keys, include_blank: "選択" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :constitution %>
+    <%= f.select :constitution, Profile.constitutions.keys, include_blank: "選択" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :floor %>
+    <%= f.select :floor, Profile.floors.keys, include_blank: "選択" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :square %>
+    <%= f.select :square, Profile.squares.keys, include_blank: "選択" %>
+  </div>
+
+  <%= f.submit %>
+
+<% end %>

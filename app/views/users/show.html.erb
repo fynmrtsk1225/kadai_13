@@ -1,6 +1,16 @@
 <h1>about me</h1>
 
+<h3>アイコン</h3>
+<%= image_tag @user.profile.image.url %>
 <h3>ユーザー名</h3>
 <%= @user.name %>
-<h3>メールアドレス</h3>
-<%= @user.email %>
+<h3>自己紹介</h3>
+<%= @user.profile.content %>
+<h4>年代</h4>
+<%= @user.profile.age %>
+<h4>居住形態</h4>
+<%= @user.profile.constitution %>
+<h4>間取り</h4>
+<%= @user.profile.floor %>
+<h4>広さ</h4>
+<%= @user.profile.square %>
