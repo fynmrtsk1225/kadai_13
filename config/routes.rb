@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "homes#index"
+  devise_for :users, path: 'user'
   resources :homes, only: [:index]
 end
