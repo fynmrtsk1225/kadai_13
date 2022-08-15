@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 2022_08_15_084327) do
   enable_extension "plpgsql"
 
   create_table "profiles", force: :cascade do |t|
-    t.text "image", null: false
+    t.text "image"
     t.string "content"
     t.integer "age"
-    t.string "constitution"
-    t.string "floor"
+    t.integer "constitution"
+    t.integer "floor"
     t.integer "square"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

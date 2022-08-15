@@ -4,8 +4,8 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.text :image
       t.string :content
       t.integer :age
-      t.string :constitution
-      t.string :floor
+      t.integer :constitution
+      t.integer :floor
       t.integer :square
       t.references :user, null: false, foreign_key: true
 
