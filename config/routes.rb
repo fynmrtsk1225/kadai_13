@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :homes, only: [:index]
   resources :users, only: [:show]
   resources :profiles, only: [:edit, :update]
+  resources :pictures
 end
