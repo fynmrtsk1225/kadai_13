@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_16_040422) do
+ActiveRecord::Schema.define(version: 2022_08_16_041027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "picture_tags", force: :cascade do |t|
+    t.bigint "picture_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["picture_id"], name: "index_picture_tags_on_picture_id"
+    t.index ["tag_id"], name: "index_picture_tags_on_tag_id"
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.text "image", null: false
@@ -57,6 +66,8 @@ ActiveRecord::Schema.define(version: 2022_08_16_040422) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "picture_tags", "pictures"
+  add_foreign_key "picture_tags", "tags"
   add_foreign_key "pictures", "users"
   add_foreign_key "profiles", "users"
 end
