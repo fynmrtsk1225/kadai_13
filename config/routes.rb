@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root "homes#index"
   devise_for :users, controllers: { registrations: 'users/registrations' }, path: 'user'
   resources :homes, only: [:index]
-  resources :users, only: [:show]
+  resources :users, only: [:index, :show]
   resources :profiles, only: [:edit, :update]
   resources :pictures
 end
