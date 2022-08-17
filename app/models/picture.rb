@@ -6,6 +6,7 @@ class Picture < ApplicationRecord
   accepts_nested_attributes_for :picture_tags, allow_destroy: true
 
   has_many :products, dependent: :destroy
+  accepts_nested_attributes_for :products, allow_destroy: true
 
   mount_uploader :image, ImageUploader
 end
