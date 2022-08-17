@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_action :admin_user
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /tags
@@ -54,5 +55,10 @@ class TagsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def tag_params
       params.require(:tag).permit(:name)
+    end
+
+    def admin_user
+      @user = current_user
+      redirect_to user_path(@user.id), notice: 'Only the administrator can access it.' if @user.admin != true
     end
 end
