@@ -1,2 +1,27 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1>Product Show</h1>
+
+<p>
+  <strong>User:</strong>
+  <%= @product.picture.user.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @product.image.file == nil %>
+    <td><%= image_tag 'sample.png', size: '200x200' %></td>
+  <% else %>
+    <td><%= image_tag @product.image.url %></td>
+  <% end %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= link_to "#{@product.product_url}", "#{@product.product_url}", target: :_blank %>
+</p>
+
+<%= link_to 'MyPage', user_path(current_user.id) %>

@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def Product_params
-    params.require(:Product)permit(:picture_id, :name, :product_url, :image_url, :image)
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
