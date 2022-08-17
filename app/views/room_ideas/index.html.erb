@@ -19,7 +19,11 @@
   <tbody>
     <% @room_ideas.each do |room_idea| %>
       <tr>
-        <td><%= image_tag room_idea.image.url %></td>
+        <% if room_idea.image.file == nil %>
+          <td><%= image_tag 'sample.png', size: '200x200' %></td>
+        <% else %>
+          <td><%= image_tag room_idea.image.url %></td>
+        <% end %>
         <td><%= room_idea.name %></td>
         <td><%= room_idea.color %></td>
         <td><%= room_idea.width %></td>

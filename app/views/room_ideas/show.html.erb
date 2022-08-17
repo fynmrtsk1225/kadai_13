@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Image:</strong>
+  <% if @room_idea.image.file == nil %>
+    <td><%= image_tag 'sample.png', size: '200x200' %></td>
+  <% else %>
+    <%= image_tag @room_idea.image.url %>
+  <% end %>
+</p>
+<p>
   <strong>Name:</strong>
   <%= @room_idea.name %>
 </p>
@@ -19,10 +27,6 @@
 <p>
   <strong>Height:</strong>
   <%= @room_idea.height %>
-</p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @room_idea.image.url %>
 </p>
 <p>
   <strong>Content:</strong>
