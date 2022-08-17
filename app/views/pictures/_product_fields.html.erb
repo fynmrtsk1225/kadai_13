@@ -19,7 +19,6 @@
 
   <div class="field">
     <%= f.label :image %>
-    <%= image_tag(@products.image.url) if @products.image && @products.image.url %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
   </div>
