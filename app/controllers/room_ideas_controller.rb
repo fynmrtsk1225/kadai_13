@@ -3,7 +3,7 @@ class RoomIdeasController < ApplicationController
 
   # GET /room_ideas
   def index
-    @room_ideas = RoomIdea.all
+    @room_ideas = current_user.room_ideas.all
   end
 
   # GET /room_ideas/1
