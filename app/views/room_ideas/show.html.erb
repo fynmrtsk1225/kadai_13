@@ -1,8 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @room_idea.user_id %>
+  <strong>Name:</strong>
+  <%= @room_idea.name %>
+</p>
+<p>
+  <strong>Color:</strong>
+  <%= @room_idea.color %>
+</p>
+<p>
+  <strong>Width:</strong>
+  <%= @room_idea.width %>
+</p>
+<p>
+  <strong>Depth:</strong>
+  <%= @room_idea.depth %>
+</p>
+<p>
+  <strong>Height:</strong>
+  <%= @room_idea.height %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @room_idea.image.url %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @room_idea.content %>
 </p>
 
 <%= link_to 'Edit', edit_room_idea_path(@room_idea) %> |
