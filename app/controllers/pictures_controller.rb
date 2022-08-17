@@ -56,7 +56,7 @@ class PicturesController < ApplicationController
 
     def picture_params
       params.require(:picture).permit(:image, :image_cache, :content, 
-                                      products_attributes: [:id, :picture_id, :name, :product_url, :image_url, :image, :_destroy],
+                                      products_attributes: [:id, :picture_id, :name, :product_url, :image_url, :image, :image_cache, :_destroy],
                                       picture_tags_attributes: [:id, :tag_id, :_destroy]
       )
   end
