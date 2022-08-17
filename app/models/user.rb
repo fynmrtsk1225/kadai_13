@@ -10,4 +10,6 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
 
   has_many :pictures, dependent: :destroy
+
+  has_many :room_ideas, dependent: :destroy
 end

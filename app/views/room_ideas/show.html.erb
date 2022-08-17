@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @room_idea.image.file == nil %>
+    <td><%= image_tag 'sample.png', size: '200x200' %></td>
+  <% else %>
+    <%= image_tag @room_idea.image.url %>
+  <% end %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @room_idea.name %>
+</p>
+<p>
+  <strong>Color:</strong>
+  <%= @room_idea.color %>
+</p>
+<p>
+  <strong>Width:</strong>
+  <%= @room_idea.width %>
+</p>
+<p>
+  <strong>Depth:</strong>
+  <%= @room_idea.depth %>
+</p>
+<p>
+  <strong>Height:</strong>
+  <%= @room_idea.height %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @room_idea.content %>
+</p>
+
+<%= link_to 'Edit', edit_room_idea_path(@room_idea) %> |
+<%= link_to 'Back', room_ideas_path %>

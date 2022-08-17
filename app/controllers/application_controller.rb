@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  
   def after_sign_in_path_for(resource)
     user_path(resource.id)
   end
@@ -16,4 +16,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [profile_attributes: [:image, :image_cache] ])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email])
   end
+  
 end

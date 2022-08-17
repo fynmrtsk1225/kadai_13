@@ -16,6 +16,7 @@
         <% if user_signed_in? %>
           <%= link_to "#{current_user.name}", user_path(current_user.id) %>
           <%= link_to '新規投稿', new_picture_path %>
+          <%= link_to 'room', room_ideas_path %>
           <%= link_to 'アカウント変更', edit_user_registration_path %>
           <%= link_to 'プロフィール変更', edit_profile_path(current_user.id) %>
           <% if current_user.try(:admin?) %>
@@ -33,6 +34,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    <%= yield %>
+    <div class="row">
+      <% if user_signed_in? %>
+        <div class="col-2">
+          <%= render'layouts/sidebar' %>
+        </div>
+      <% end %>
+    <div class="col-8">
+      <%= yield %>
+    </div>
   </body>
 </html>

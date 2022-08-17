@@ -1,0 +1,48 @@
+<%= form_with(model: room_idea, local: true) do |form| %>
+  <% if room_idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room_idea.errors.count, "error") %> prohibited this room_idea from being saved:</h2>
+
+      <ul>
+        <% room_idea.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(room_idea.image.url) if room_idea.image && room_idea.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :width %>
+  </div>
+  <div class="field">
+    <%= form.label :depth %>
+    <%= form.text_field :depth %>
+  </div>
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+  </div>
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

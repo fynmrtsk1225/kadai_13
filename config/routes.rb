@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :room_ideas
   resources :products, only: [:index, :show]
   resources :tags
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
