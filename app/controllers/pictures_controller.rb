@@ -13,6 +13,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
+    @picture_tags = @picture.picture_tags.build
   end
 
   # GET /pictures/1/edit
@@ -56,4 +57,9 @@ class PicturesController < ApplicationController
     def picture_params
       params.require(:picture).permit(:image, :image_cache, :content)
     end
+
+    def picture_params
+      params.require(:picture).permit(:image, :image_cache, :content, picture_tags_attributes: [:id, :tag_id, :_destroy]
+      )
+  end
 end

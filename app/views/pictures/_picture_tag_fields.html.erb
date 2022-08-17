@@ -1,0 +1,7 @@
+<div class="nested-fields">
+<label class="control-label">タグ名</label>
+  <%= f.hidden_field :id %>
+  <div class=" btn btn-light dropdown p-0 mb-1">
+    <%= f.collection_select :tag_id, Tag.all, :id, :name, prompt: "タグを選択", class: 'form-control' %>
+  </div>
+</div>
