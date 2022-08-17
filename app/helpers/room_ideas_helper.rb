@@ -1,0 +1,2 @@
+module RoomIdeasHelper
+end
