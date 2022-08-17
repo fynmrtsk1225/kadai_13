@@ -1,0 +1,28 @@
+<div class="nested-fields">
+<label class="control-label"><h3>商品情報</h3></label>
+  <%= f.hidden_field :id %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_url %>
+    <%= f.text_field :product_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+  <%= link_to_remove_association "削除", f %>
+
+</div>

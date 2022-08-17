@@ -13,6 +13,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
+    @products = @picture.products.build
     @picture_tags = @picture.picture_tags.build
   end
 
@@ -53,13 +54,10 @@ class PicturesController < ApplicationController
       @picture = Picture.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def picture_params
-      params.require(:picture).permit(:image, :image_cache, :content)
-    end
-
-    def picture_params
-      params.require(:picture).permit(:image, :image_cache, :content, picture_tags_attributes: [:id, :tag_id, :_destroy]
+      params.require(:picture).permit(:image, :image_cache, :content, 
+                                      products_attributes: [:id, :picture_id, :name, :product_url, :image_url, :image, :image_cache, :_destroy],
+                                      picture_tags_attributes: [:id, :tag_id, :_destroy]
       )
   end
 end
