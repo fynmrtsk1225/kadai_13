@@ -17,6 +17,6 @@ class UsersController < ApplicationController
   private
 
   def set_q
-    @user_q = User.ransack(params[:user_q])
+    @user_q = User.ransack(params[:q])
   end
 end
