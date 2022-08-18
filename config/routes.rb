@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:edit, :update]
 
-  resources :pictures
+  resources :pictures do
+    collection do
+      get 'search'
+    end
+  end
   resources :tags
   resources :products, only: [:index, :show] do
     collection do
