@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:index, :search]
 
   # GET /pictures
   def index
@@ -48,16 +49,24 @@ class PicturesController < ApplicationController
     redirect_to pictures_url, notice: 'Picture was successfully destroyed.'
   end
 
+  def search
+    @results = @picture_q.result
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_picture
-      @picture = Picture.find(params[:id])
-    end
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
 
-    def picture_params
-      params.require(:picture).permit(:image, :image_cache, :content, 
-                                      products_attributes: [:id, :picture_id, :name, :product_url, :image_url, :image, :image_cache, :_destroy],
-                                      picture_tags_attributes: [:id, :tag_id, :_destroy]
-      )
+  def set_q
+    @picture_q = Picture.ransack(params[:q])
+  end
+
+  def picture_params
+    params.require(:picture).permit(:image, :image_cache, :content, 
+                                    products_attributes: [:id, :picture_id, :name, :product_url, :image_url, :image, :image_cache, :_destroy],
+                                    picture_tags_attributes: [:id, :tag_id, :_destroy]
+    )
   end
 end
