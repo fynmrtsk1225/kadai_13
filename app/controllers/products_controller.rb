@@ -20,6 +20,6 @@ class ProductsController < ApplicationController
   end
 
   def set_q
-    @product_q = Product.ransack(params[:product_q])
+    @product_q = Product.ransack(params[:q])
   end
 end
