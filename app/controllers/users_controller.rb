@@ -11,12 +11,12 @@ class UsersController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    @results = @user_q.result
   end
 
   private
 
   def set_q
-    @q = User.ransack(params[:q])
+    @user_q = User.ransack(params[:user_q])
   end
 end
