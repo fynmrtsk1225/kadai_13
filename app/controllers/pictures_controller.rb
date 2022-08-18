@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures
   def index
-    @pictures = Picture.all
+    # @pictures = Picture.all
   end
 
   # GET /pictures/1
@@ -61,6 +61,8 @@ class PicturesController < ApplicationController
 
   def set_q
     @picture_q = Picture.ransack(params[:q])
+    @tags = Tag.all
+    @pictures = @picture_q.result.includes(:tags)
   end
 
   def picture_params
