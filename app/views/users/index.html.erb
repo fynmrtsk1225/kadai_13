@@ -24,6 +24,13 @@
         <td><%= image_tag user.profile.image.url %></td>
         <td><%= user.name %></td>
         <td><%= link_to 'Show', user %></td>
+        <% if current_user != user %>
+        <% if user.followed_by?(current_user) %>
+          <td>フォロー中 <%=link_to "解除", user_relationships_path(user.id), method: :delete %></td>
+        <% else %>
+            <td><%=link_to "フォロー", user_relationships_path(user.id), method: :post %></td>
+        <% end %>
+    <% end %>
       </tr>
     <% end %>
   </tbody>
