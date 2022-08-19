@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :sign_in_required, only: [:index, :show]
+  before_action :sign_in_required
   before_action :set_q, only: [:index, :search]
   
   def index
@@ -7,11 +7,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def search
     @results = @user_q.result
+  end
+
+  def follows
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
   end
 
   private

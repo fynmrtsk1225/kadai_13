@@ -1,9 +1,21 @@
 <h1>about me</h1>
 
+<% if current_user != @user %>
+  <% if @user.followed_by?(current_user) %>
+    <td>フォロー中 <%=link_to "解除", user_relationships_path(@user.id), method: :delete %></td>
+  <% else %>
+    <td><%=link_to "フォロー", user_relationships_path(@user.id), method: :post %></td>
+  <% end %>
+<% end %>
+
 <h3>アイコン</h3>
 <%= image_tag @user.profile.image.url %>
 <h3>ユーザー名</h3>
 <%= @user.name %>
+<h3>フォロー</h3>
+<%= @user.followings.count %>
+<h3>フォロワー</h3>
+<%= @user.followers.count %>
 <h3>自己紹介</h3>
 <%= @user.profile.content %>
 <h4>年代</h4>
@@ -14,6 +26,7 @@
 <%= @user.profile.floor %>
 <h4>広さ</h4>
 <%= @user.profile.square %>
+
 
 <h1>投稿</h1>
 
