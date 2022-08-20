@@ -21,6 +21,10 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  post 'favorite_picture/:id' => 'favorite_pictures#create', as: 'create_favorite_picture'
+  delete 'favorite_picture/:id' => 'favorite_pictures#destroy', as: 'destroy_favorite_picture'
+
   resources :tags
   resources :products, only: [:index, :show] do
     collection do

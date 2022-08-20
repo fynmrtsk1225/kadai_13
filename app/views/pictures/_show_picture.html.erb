@@ -1,0 +1,5 @@
+<% if current_user.favorited_picture_by?(picture.id) %>
+  <p class="heart"><%= link_to image_tag('icon_heart_on.PNG', size: '40x40'), destroy_favorite_picture_path(picture), method: :DELETE, remote: true %></p>
+<% else %>
+  <p class="heart"><%= link_to image_tag('icon_heart_off.PNG', size: '40x40'), create_favorite_picture_path(picture), method: :POST, remote: true %></p>
+<% end %>

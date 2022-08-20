@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   has_many :room_ideas, dependent: :destroy
 
+  has_many :favorite_pictures, dependent: :destroy
+
   # ====================自分がフォローしているユーザーとの関連 ===================================
   #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
@@ -30,6 +32,10 @@ class User < ApplicationRecord
   def followed_by?(user)
     # 今自分(引数のuser)がフォローしようとしているユーザー(レシーバー)がフォローされているユーザー(つまりpassive)の中から、引数に渡されたユーザー(自分)がいるかどうかを調べる
     passive_relationships.find_by(following_id: user.id).present?
+  end
+
+  def favorited_picture_by?(picture_id)
+    favorite_pictures.where(picture_id: picture_id).exists?
   end
   
 end

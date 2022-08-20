@@ -33,6 +33,8 @@ gem 'cocoon'
 
 gem 'ransack'
 
+gem 'jquery-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

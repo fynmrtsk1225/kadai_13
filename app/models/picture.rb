@@ -10,5 +10,7 @@ class Picture < ApplicationRecord
   has_many :products, dependent: :destroy
   accepts_nested_attributes_for :products, allow_destroy: true
 
+  has_many :favorite_pictures, dependent: :destroy
+
   mount_uploader :image, ImageUploader
 end
