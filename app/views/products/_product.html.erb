@@ -1,6 +1,10 @@
-<td><%= image_tag product.picture.user.profile.image.url %></td>
+<% unless product.picture.user.profile.image.present? %>
+  <td><%= image_tag 'guest.png', size: '200x200', style: "border-radius: 50%; width: 200px; height: 200px; object-fit:cover;" %></td>
+<% else %>
+  <td><%= image_tag product.picture.user.profile.image.url, style: "border-radius: 50%; width: 200px; height: 200px; object-fit:cover;" %></td>
+<% end %>
 <td><%= link_to "#{product.picture.user.name}", user_path(product.picture.user.id) %></td>
-<% if product.image.file == nil %>
+<% unless product.image.present? %>
   <td><%= link_to image_tag('sample.png', size: '200x200'), product_path(product.id), {class: "heart"} %></td>
 <% else %>
   <td><%= link_to image_tag(product.image.url), product_path(product.id), {class: "heart"} %></td>

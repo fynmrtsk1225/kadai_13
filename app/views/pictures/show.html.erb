@@ -4,5 +4,12 @@
   <%= render 'picture', picture: @picture %>
 </div>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<% if @picture.user == current_user %>
+  <%= link_to 'Edit', edit_picture_path(@picture) %> |
+  <%= link_to 'Destroy', @picture, method: :delete, data: { confirm: 'Are you sure? '} %> |
+<% else %>
+  <td></td>
+  <td></td>
+<% end %>
+
 <%= link_to 'MyPage', user_path(current_user.id) %>
