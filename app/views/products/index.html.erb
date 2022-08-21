@@ -12,6 +12,7 @@
 <table>
   <thead>
     <tr>
+      <th>icon</th>
       <th>User</th>
       <th>Image</th>
       <th>Name</th>
@@ -22,16 +23,8 @@
 
   <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.picture.user.name %></td>
-        <% if product.image.file == nil %>
-          <td><%= image_tag 'sample.png', size: '200x200' %></td>
-        <% else %>
-          <td><%= image_tag product.image.url %></td>
-        <% end %>
-        <td><%= product.name %></td>
-        <td><%= link_to "販売情報", "#{product.product_url}", target: :_blank %></td>
-        <td><%= link_to 'Show', product %></td>
+      <tr id="product_<%= product.id %>">
+        <%= render 'product', product: product %>
       </tr>
     <% end %>
   </tbody>

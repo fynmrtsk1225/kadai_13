@@ -1,0 +1,14 @@
+<td><%= image_tag product.picture.user.profile.image.url %></td>
+<td><%= link_to "#{product.picture.user.name}", user_path(product.picture.user.id) %></td>
+<% if product.image.file == nil %>
+  <td><%= link_to image_tag('sample.png', size: '200x200'), product_path(product.id), {class: "heart"} %></td>
+<% else %>
+  <td><%= link_to image_tag(product.image.url), product_path(product.id), {class: "heart"} %></td>
+<% end %>
+<td><%= product.name %></td>
+<td><%= link_to "販売情報", "#{product.product_url}", target: :_blank %></td>
+<% if current_user.favorited_product_by?(product.id) %>
+  <td><%= link_to image_tag('icon_heart_on.PNG', size: '40x40'), destroy_favorite_product_path(product), {method: :DELETE, remote: true, class: "heart"} %></td>
+<% else %>
+  <td><%= link_to image_tag('icon_heart_off.PNG', size: '40x40'), create_favorite_product_path(product), {method: :POST, remote: true, class: "heart"} %></td>
+<% end %>

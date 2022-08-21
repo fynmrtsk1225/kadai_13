@@ -1,0 +1,3 @@
+<%# app/views/favorite_products/create.js.erb %>
+
+document.getElementById('product_<%= @product.id %>').innerHTML = '<%= j(render @product) %>'
