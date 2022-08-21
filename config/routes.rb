@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'favorite_products/index'
+  get 'favorite_products/create'
+  get 'favorite_products/destroy'
   root "homes#index"
 
   resources :homes, only: [:index]
