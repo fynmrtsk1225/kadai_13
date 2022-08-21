@@ -14,6 +14,6 @@
  *= require_self
  */
 
-.heart a:hover {
+.heart:hover {
   background-color: transparent;
-  }
+}
