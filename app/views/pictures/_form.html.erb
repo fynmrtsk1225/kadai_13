@@ -24,25 +24,11 @@
   </div>
 
   <div class="d-flex justify-content-between">
-    <%= link_to_add_association '商品追加', f, :products,
-        class: 'btn btn-success  ml-1 p-1',
-        data: {
-          association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'append' }
-    %>
-  </div>
-  <div class="form-group" id='detail-association-insertion-point'>
-    <%= f.fields_for :products do |form| %>
-      <%= render 'product_fields', f: form %>
-    <% end %>
-  </div>
-
-  <div class="d-flex justify-content-between">
     <%= link_to_add_association 'タグ追加', f, :picture_tags,
         class: 'btn btn-success  ml-1 p-1',
         data: {
           association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'append' }
+          association_insertion_method: 'before' }
     %>
   </div>
   <div class="form-group" id='detail-association-insertion-point'>
@@ -51,6 +37,14 @@
     <% end %>
   </div>
 
+  <div class="d-flex justify-content-between">
+    <%= link_to_add_association '商品追加', f, :products,
+        class: 'btn btn-success  ml-1 p-1',
+        data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'before' }
+    %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
