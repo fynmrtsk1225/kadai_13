@@ -4,10 +4,8 @@
   <%= render 'user', user: @user %>
 </div>
 
-<h3>フォロー</h3>
-<%= @user.followings.count %>
-<h3>フォロワー</h3>
-<%= @user.followers.count %>
+<%= link_to "フォロー #{@user.followings.count}人", follows_user_path(@user) %>
+<%= link_to "フォロワー #{@user.followers.count}人", followers_user_path(@user) %>
 <h3>自己紹介</h3>
 <%= @user.profile.content %>
 <h4>年代</h4>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :sign_in_required
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: [:index, :follows, :followers, :search]
   
   def index
     @users = User.all
