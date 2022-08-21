@@ -1,2 +1,26 @@
-<h1>FavoriteProducts#index</h1>
-<p>Find me in app/views/favorite_products/index.html.erb</p>
+<h1>Favorites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>icon</th>
+      <th>User</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorite_products.each do |product| %>
+      <tr id="product_<%= product.id %>">
+        <%= render '/products/product', product: product %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'All Products', products_path %>

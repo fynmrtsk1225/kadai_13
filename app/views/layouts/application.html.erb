@@ -21,7 +21,8 @@
           <%= link_to 'pictures', pictures_path %>
           <%= link_to 'products', products_path %>
           <%= link_to 'users', users_path %>
-          <%= link_to 'Pfav', favorite_pictures_path %>
+          <%= link_to 'Pic❤', favorite_pictures_path %>
+          <%= link_to 'Pro❤', favorite_products_path %>
           <%= link_to 'アカウント変更', edit_user_registration_path %>
           <%= link_to 'プロフィール変更', edit_profile_path(current_user.id) %>
           <% if current_user.try(:admin?) %>
