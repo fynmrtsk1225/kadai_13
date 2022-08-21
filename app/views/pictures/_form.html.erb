@@ -23,6 +23,7 @@
     <%= f.text_field :content %>
   </div>
 
+
   <div class="d-flex justify-content-between">
     <%= link_to_add_association 'タグ追加', f, :picture_tags,
         class: 'btn btn-success  ml-1 p-1',
@@ -45,6 +46,13 @@
           association_insertion_method: 'before' }
     %>
   </div>
+  <% unless picture.products.ids.blank? %>
+  <div class="form-group" id='detail-association-insertion-point'>
+    <%= f.fields_for :products do |form| %>
+      <%= render 'product_fields', f: form %>
+    <% end %>
+  </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
