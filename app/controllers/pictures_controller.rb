@@ -46,7 +46,7 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1
   def destroy
     @picture.destroy
-    redirect_to pictures_url, notice: 'Picture was successfully destroyed.'
+    redirect_to user_path(current_user.id), notice: 'Picture was successfully destroyed.'
   end
 
   def search
