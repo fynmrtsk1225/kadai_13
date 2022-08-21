@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :room_ideas, dependent: :destroy
 
   has_many :favorite_pictures, dependent: :destroy
+  has_many :favorited_pictures, through: :favorite_pictures, source: :picture
 
   # ====================自分がフォローしているユーザーとの関連 ===================================
   #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はfollowing_id(フォローする側)

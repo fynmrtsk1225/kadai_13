@@ -1,9 +1,9 @@
 class FavoritePicturesController < ApplicationController
-  before_action :set_picture
+  before_action :set_picture, only: [:create, :destroy]
 
-  # def create
-  #   @favorite_picture = FavoritePicture.create(user_id: current_user.id, picture_id: params[:picture_id])
-  # end
+  def index
+    @favorite_pictures = current_user.favorited_pictures
+  end
 
   def create
     FavoritePicture.create(user_id: current_user.id, picture_id: params[:id])
@@ -24,6 +24,5 @@ class FavoritePicturesController < ApplicationController
 
   def set_picture
     @picture = Picture.find(params[:id])
-    @pictures = Picture.all
   end
 end
