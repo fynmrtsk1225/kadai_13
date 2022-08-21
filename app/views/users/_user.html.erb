@@ -1,0 +1,9 @@
+<td><%= link_to image_tag(user.profile.image.url, size: '100x100'), user_path(user.id), class: "heart" %></td>
+<td><%= link_to "#{user.name}", user_path(user.id) %></td> 
+<% if current_user != user %>
+  <% if user.followed_by?(current_user) %>
+    <td><%=link_to image_tag('following.PNG', size: '60x60'), user_relationships_path(user.id), { method: :delete, remote: true, data: { confirm: "【確認】フォローを解除してもよろしいですか？" }, class: "heart" } %></td>
+  <% else %>
+    <td><%=link_to image_tag('follow.PNG', size: '60x60'), user_relationships_path(user.id), { method: :post, remote: true, class: "heart" } %></td>
+  <% end %>
+<% end %>

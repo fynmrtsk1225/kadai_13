@@ -2,6 +2,7 @@ class FavoriteProductsController < ApplicationController
   before_action :set_product, only: [:create, :destroy]
 
   def index
+    @favorite_products = current_user.favorited_products
   end
 
   def create

@@ -10,13 +10,11 @@
 
   <tbody>
     <% @results.each do |user| %>
-      <tr>
-        <td><%= image_tag user.profile.image.url %></td>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
+      <tr id="user_<%= user.id %>">
+        <%= render 'user', user: user %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Top', users_path %>
+<%= link_to 'Users', users_path %>
