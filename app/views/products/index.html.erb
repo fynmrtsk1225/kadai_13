@@ -32,6 +32,11 @@
         <td><%= product.name %></td>
         <td><%= link_to "販売情報", "#{product.product_url}", target: :_blank %></td>
         <td><%= link_to 'Show', product %></td>
+        <% if current_user.favorited_product_by?(picture.id) %>
+          <td>いいねを外す</td>
+        <% else %>
+          <td>いいね</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

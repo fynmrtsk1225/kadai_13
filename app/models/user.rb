@@ -41,5 +41,9 @@ class User < ApplicationRecord
   def favorited_picture_by?(picture_id)
     favorite_pictures.where(picture_id: picture_id).exists?
   end
+
+  def favorited_product_by?(product_id)
+    favorite_products.where(product_id: product_id).exists?
+  end
   
 end
