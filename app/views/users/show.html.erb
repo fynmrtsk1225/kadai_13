@@ -1,8 +1,8 @@
 <h1>about me</h1>
 
-<tr id="user_<%= user.id %>">
-  <%= render 'user', user: user %>
-</tr>
+<div id="user_<%= @user.id %>">
+  <%= render 'user', user: @user %>
+</div>
 
 <h3>フォロー</h3>
 <%= @user.followings.count %>

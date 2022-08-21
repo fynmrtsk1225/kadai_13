@@ -1,4 +1,4 @@
-<td><%= link_to image_tag(user.profile.image.url, size: '100x100'), user_path(user.id) %></td>
+<td><%= link_to image_tag(user.profile.image.url, size: '100x100'), user_path(user.id), class: "heart" %></td>
 <td><%= link_to "#{user.name}", user_path(user.id) %></td> 
 <% if current_user != user %>
   <% if user.followed_by?(current_user) %>
