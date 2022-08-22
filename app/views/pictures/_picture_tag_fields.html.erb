@@ -1,10 +1,21 @@
-<div class="nested-fields">
-  <label class="control-label">追加タグ</label>
-  <%= f.hidden_field :id %>
-  <div class=" btn btn-light dropdown p-0 mb-1">
-    <%= f.collection_select :tag_id, Tag.all, :id, :name, prompt: "タグを選択", class: 'form-control' %>
-  </div>
+<table>
+  <tr>
+    <div class="nested-fields">
+      <td><label class="control-label">+</label></td>
+      <%= f.hidden_field :id %>
+      <div class=" btn btn-light dropdown p-0 mb-1">
+        <td><%= f.collection_select :tag_id, Tag.all, :id, :name, prompt: "タグを選択", class: 'form-control' %></td>
+      </div>
 
-  <%= link_to_remove_association "削除", f %>
+      <td><%= link_to_remove_association "削除", f, id: 'remove-btn' %></td>
+    </div>
+  </tr>
+</table>
 
-</div>
+<script>
+  $(document).on('turbolinks:load', function() {
+    if ($('.nested-fields').length == 1) {
+      $('#remove-btn').hide();
+    }
+});
+</script> 
