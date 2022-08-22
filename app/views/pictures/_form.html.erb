@@ -20,9 +20,10 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
 
+  <h3>タグ ※1つ以上選択</h3>
 
   <div class="d-flex justify-content-between">
     <%= link_to_add_association 'タグ追加', f, :picture_tags,
@@ -43,16 +44,15 @@
         class: 'btn btn-success  ml-1 p-1',
         data: {
           association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'before' }
+          association_insertion_method: 'append' }
     %>
   </div>
-  <% unless picture.products.ids.blank? %>
+
   <div class="form-group" id='detail-association-insertion-point'>
     <%= f.fields_for :products do |form| %>
       <%= render 'product_fields', f: form %>
     <% end %>
   </div>
-  <% end %>
 
   <div class="actions">
     <%= f.submit %>
