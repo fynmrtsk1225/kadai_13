@@ -23,12 +23,17 @@ class PicturesController < ApplicationController
 
   # POST /pictures
   def create
-    @picture = Picture.new(picture_params)
+    @picture = Picture.new(picture_params)    
     @picture.user_id = current_user.id
 
-    if @picture.save
-      redirect_to @picture, notice: 'Picture was successfully created.'
+    if @picture.picture_tags.blank? == false
+      if @picture.save
+        redirect_to @picture, notice: 'Picture was successfully created.'
+      else
+        render :new
+      end
     else
+      @picture.errors.add(:base, 'タグを1つ以上つけてください')
       render :new
     end
   end
