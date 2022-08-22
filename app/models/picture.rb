@@ -14,5 +14,9 @@ class Picture < ApplicationRecord
   validates :image, presence: true
   validates :content, length: { maximum: 255}
 
+  validates_associated :picture_tags
+
+  validates_associated :products
+
   mount_uploader :image, ImageUploader
 end
