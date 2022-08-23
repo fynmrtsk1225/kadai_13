@@ -1,8 +1,8 @@
 
 User.create!(name: "admin", email: "admin@exam.com", password: "password1", admin: "true")
 
-# require 'romaji'
-# require "romaji/core_ext/string"
+require 'romaji'
+require "romaji/core_ext/string"
 
 User.create!([
   { name: "eipamu", email: "eipamu@exam.com", password: "password2" },
@@ -16,6 +16,9 @@ User.create!([
   { name: "supia-", email: "supia-@exam.com", password: "password10" },
   { name: "do-buru", email: "do-buru@exam.com", password: "password11" },
 ])
+
+User.guest
+User.guest_admin
 
 User.all.each do |n|
   profile = n.build_profile
@@ -32,5 +35,24 @@ User.all.each do |n|
     constitution: constitution,
     floor:              floor,
     square:             square,
+  )
+end
+
+User.all.each do |n|
+  name = "#{Faker::House.furniture}"
+  color = "#{Faker::Color.color_name}"
+  width = "#{Faker::Number.number(digits: 2)}"
+  depth = "#{Faker::Number.number(digits: 2)}"
+  height = "#{Faker::Number.number(digits: 3)}"
+  image = File.open("./public/idea_image/room#{n.id}.jpeg")
+  content = "sample#{n.id}"
+  n.room_ideas.create!(
+    name:        name,
+    color:      color,
+    width:      width,
+    depth:      depth,
+    height:    height,
+    image:      image,
+    content:  content,
   )
 end
