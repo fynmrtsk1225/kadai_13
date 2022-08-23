@@ -84,5 +84,37 @@ end
 
 Picture.all.ids.sort.each do |picture_id|
   tag_id = picture_id
-    PictureTag.create(picture_id: picture_id, tag_id: tag_id)
+  PictureTag.create(picture_id: picture_id, tag_id: tag_id)
 end
+
+Product.create!(
+  picture_id: "5",
+  name: "SINNERLIG スィネリグ",
+  product_url: "https://www.ikea.com/jp/ja/p/sinnerlig-pendant-lamp-bamboo-handmade-80342194/",
+  image_url: "https://www.ikea.com/jp/ja/images/products/sinnerlig-pendant-lamp-bamboo-handmade__0919001_pe786542_s5.jpg?f=xl",
+  image: File.open("./public/product_image/product1.png")
+)
+Product.create!(
+  picture_id: "6",
+  name: "カラーボックス Nカラボ 3段扉付き",
+  product_url: "https://www.nitori-net.jp/ec/product/8841036s/",
+  image_url: "https://www.nitori-net.jp/ecstatic/image/product/8841036/884103602.jpg?ccp=1661238000&imwidth=415&imdensity=1&ts=20220713182134862",
+  image: File.open("./public/product_image/product2.png")
+)
+Product.create!(
+  picture_id: "7",
+  name: "無印良品 スタッキングキャビネット",
+  product_url: "https://amzn.asia/d/8wmBauA",
+  image_url: "https://m.media-amazon.com/images/I/61vUvOCW5wL._AC_SX679_.jpg",
+  image: File.open("./public/product_image/product3.png")
+)
+Product.create!(
+  picture_id: "8",
+  name: "折りたたみラタンチェア",
+  product_url: "https://littlerooms.jp/products/371663?variant=32150915874934&currency=JPY&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITWqbIjI480SDxZidPJeYFMyaNhMZjLcm8BNGwwgYikJP5Y39dk3XWsaArk8EALw_wcB",
+)
+Product.create!(
+  picture_id: "9",
+  name: "THE CAFE TABLE",
+  product_url: "https://kanademono.design/products/ctb-py-lino?variant=39548770123838&gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITWyNmhrB9jP8GRrJ24SzGq-_6prvA0u-xDAwFqLEz2dJHWH0rtXfzgaAgXZEALw_wcB",
+)
