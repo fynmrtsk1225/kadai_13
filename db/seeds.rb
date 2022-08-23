@@ -56,3 +56,19 @@ User.all.each do |n|
     content:  content,
   )
 end
+
+Tag.create!(name: "同棲")
+Tag.create!(name: "ファミリー")
+Tag.create!(name: "二世帯")
+Tag.create!(name: "ミニマリスト")
+Tag.create!(name: "IKEA")
+Tag.create!(name: "ニトリ")
+Tag.create!(name: "無印")
+Tag.create!(name: "韓国")
+Tag.create!(name: "北欧系")
+Tag.create!(name: "白")
+Tag.create!(name: "淡色")
+Tag.create!(name: "モノトーン")
+Tag.create!(name: "おしゃれ")
+Tag.create!(name: "かわいい")
+Tag.create!(name: "シンプル")

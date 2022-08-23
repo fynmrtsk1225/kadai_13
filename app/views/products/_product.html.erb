@@ -1,7 +1,7 @@
 <% unless product.picture.user.profile.image.present? %>
-  <td><%= image_tag 'guest.png', size: '200x200', style: "border-radius: 50%; width: 200px; height: 200px; object-fit:cover;" %></td>
+  <td><%= image_tag 'guest.png', size: '200x200', class: "rounded-circle", size: "100x100" %></td>
 <% else %>
-  <td><%= image_tag product.picture.user.profile.image.url, style: "border-radius: 50%; width: 200px; height: 200px; object-fit:cover;" %></td>
+  <td><%= image_tag product.picture.user.profile.image.url, class: "rounded-circle", size: "100x100" %></td>
 <% end %>
 <td><%= link_to "#{product.picture.user.name}", user_path(product.picture.user.id) %></td>
 <% unless product.image.present? %>
