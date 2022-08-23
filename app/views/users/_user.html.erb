@@ -1,7 +1,7 @@
 <% unless user.profile.image.present? %>
-  <td><%= link_to image_tag('guest.png', size: '100x100', style: "border-radius: 50%; width: 200px; height: 200px; object-fit:cover;"), user_path(user.id), class: "heart" %></td>
+  <td><%= link_to image_tag('guest.png', class: "rounded-circle", size: "100x100"), user_path(user.id), class: "heart" %></td>
 <% else %>
-  <td><%= link_to image_tag(user.profile.image.url, size: '100x100', style: "border-radius: 50%; width: 200px; height: 200px; object-fit:cover;"), user_path(user.id), class: "heart" %></td>
+  <td><%= link_to image_tag(user.profile.image.url, class: "rounded-circle", size: "100x100"), user_path(user.id), class: "heart" %></td>
 <% end %>
 <td><%= link_to "#{user.name}", user_path(user.id) %></td> 
 <% if current_user != user %>
