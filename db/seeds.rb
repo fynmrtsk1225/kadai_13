@@ -69,6 +69,20 @@ Tag.create!(name: "北欧系")
 Tag.create!(name: "白")
 Tag.create!(name: "淡色")
 Tag.create!(name: "モノトーン")
+Tag.create!(name: "シンプル")
 Tag.create!(name: "おしゃれ")
 Tag.create!(name: "かわいい")
-Tag.create!(name: "シンプル")
+
+User.all.each do |n|
+  image = File.open("./public/picture_image/picture#{n.id}.jpeg")
+  content = "sample#{n.id}"
+  n.pictures.create!(
+    image:              image,
+    content:          content,
+  )
+end
+
+Picture.all.ids.sort.each do |picture_id|
+  tag_id = picture_id
+    PictureTag.create(picture_id: picture_id, tag_id: tag_id)
+end
