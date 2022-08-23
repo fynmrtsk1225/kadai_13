@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :sign_in_required
   before_action :set_user, only: [:create, :destroy]
 
   def create

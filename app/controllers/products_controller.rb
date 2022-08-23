@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :sign_in_required
   before_action :set_product, only: [:show]
   before_action :set_q, only: [:index, :search]
 

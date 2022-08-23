@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_action :sign_in_required
   before_action :admin_user
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 

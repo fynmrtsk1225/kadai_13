@@ -1,4 +1,5 @@
 class RoomIdeasController < ApplicationController
+  before_action :sign_in_required
   before_action :set_room_idea, only: [:show, :edit, :update, :destroy]
 
   # GET /room_ideas

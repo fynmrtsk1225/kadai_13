@@ -1,4 +1,5 @@
 class FavoriteProductsController < ApplicationController
+  before_action :sign_in_required
   before_action :set_product, only: [:create, :destroy]
 
   def index

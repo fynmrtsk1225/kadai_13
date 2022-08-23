@@ -1,4 +1,5 @@
 class FavoritePicturesController < ApplicationController
+  before_action :sign_in_required
   before_action :set_picture, only: [:create, :destroy]
 
   def index
