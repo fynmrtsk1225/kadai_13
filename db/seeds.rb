@@ -57,6 +57,15 @@ User.all.each do |n|
   )
 end
 
+User.all.ids.sort.each do |following_id|
+  if following_id == "1"
+    follower_id = "12"
+  else
+    follower_id = "13"
+  end
+  Relationship.create(following_id: following_id, follower_id: follower_id)
+end
+
 Tag.create!(name: "同棲")
 Tag.create!(name: "ファミリー")
 Tag.create!(name: "二世帯")
