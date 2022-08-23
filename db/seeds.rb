@@ -134,3 +134,10 @@ Product.create!(
     FavoritePicture.create(user_id: user_id, picture_id: picture_id)
   end
 end
+
+3.times do |n|
+  User.all.ids.sort.each do |user_id|
+    product_id = "#{n + 1}"
+    FavoriteProduct.create(user_id: user_id,  product_id:  product_id)
+  end
+end
