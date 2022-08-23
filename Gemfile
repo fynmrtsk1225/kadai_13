@@ -36,6 +36,7 @@ gem 'ransack'
 gem 'jquery-rails'
 
 gem 'faker'
+gem 'romaji'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

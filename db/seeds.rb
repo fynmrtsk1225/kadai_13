@@ -7,3 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(name: "admin", email: "admin@exam.com", password: "adminadmin", admin: "true")
+
+require 'romaji'
+require "romaji/core_ext/string"
+
+10.times do |n|
+  name = Faker::Games::Pokemon.name.romaji
+  email = "#{name}@exam.com"
+  password = "password#{n + 1}"
+  User.create!(
+    name:         name,
+    email:        email,
+    password: password,
+  )
+end

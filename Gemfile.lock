@@ -222,6 +222,8 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    romaji (0.2.4)
+      rake (>= 0.8.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
@@ -308,6 +310,7 @@ DEPENDENCIES
   rails (~> 6.0.5)
   rails_admin (~> 2.0.0.beta)
   ransack
+  romaji
   sass-rails (>= 6)
   selenium-webdriver
   spring
