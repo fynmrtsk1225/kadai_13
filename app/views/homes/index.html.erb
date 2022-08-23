@@ -11,7 +11,11 @@
 <br>
 
 <% unless user_signed_in? %>
-<h4>ゲストログインはこちら</h4>
-<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %> |
-<%= link_to '管理者ログイン（管理用）', users_admin_guest_sign_in_path, method: :post %>
+  <h4>ゲストログインはこちら</h4>
+  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %> |
+  <%= link_to '管理者ログイン（管理用）', users_admin_guest_sign_in_path, method: :post %>
+<% else %>
+  <h3>理想の部屋をつくるには？</h3  >
+  <%= link_to 'アイデアを探す', pictures_path %> |
+  <%= link_to '欲しいものリストをつくる', new_room_idea_path %>
 <% end %>
