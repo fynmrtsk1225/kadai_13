@@ -58,7 +58,7 @@ User.all.each do |n|
 end
 
 User.all.ids.sort.each do |following_id|
-  if following_id == "1"
+  if following_id == 13
     follower_id = "12"
   else
     follower_id = "13"
