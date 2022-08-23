@@ -127,3 +127,10 @@ Product.create!(
   name: "THE CAFE TABLE",
   product_url: "https://kanademono.design/products/ctb-py-lino?variant=39548770123838&gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITWyNmhrB9jP8GRrJ24SzGq-_6prvA0u-xDAwFqLEz2dJHWH0rtXfzgaAgXZEALw_wcB",
 )
+
+3.times do |n|
+  User.all.ids.sort.each do |user_id|
+    picture_id = "#{n + 1}"
+    FavoritePicture.create(user_id: user_id, picture_id: picture_id)
+  end
+end
