@@ -51,6 +51,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
       profile = user.build_profile
+      profile.image = File.open("./app/assets/images/poke12.png")
     end
   end
 
@@ -58,8 +59,9 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guest_admin@example.com') do |user|
       user.name = "管理者ゲスト"
       user.password = SecureRandom.urlsafe_base64
-      profile = user.build_profile
       user.admin = true
+      profile = user.build_profile
+      profile.image = File.open("./app/assets/images/poke13.png")
     end
   end
   
