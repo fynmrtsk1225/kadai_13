@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_21_070114) do
+ActiveRecord::Schema.define(version: 2022_08_24_044729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2022_08_21_070114) do
     t.bigint "user_id", null: false
     t.bigint "picture_id", null: false
     t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["picture_id"], name: "index_favorite_pictures_on_picture_id"
     t.index ["user_id"], name: "index_favorite_pictures_on_user_id"
   end
@@ -28,7 +27,6 @@ ActiveRecord::Schema.define(version: 2022_08_21_070114) do
     t.bigint "user_id", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_favorite_products_on_product_id"
     t.index ["user_id"], name: "index_favorite_products_on_user_id"
   end
@@ -37,7 +35,6 @@ ActiveRecord::Schema.define(version: 2022_08_21_070114) do
     t.bigint "picture_id", null: false
     t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["picture_id"], name: "index_picture_tags_on_picture_id"
     t.index ["tag_id"], name: "index_picture_tags_on_tag_id"
   end
@@ -76,10 +73,9 @@ ActiveRecord::Schema.define(version: 2022_08_21_070114) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "following_id"
-    t.integer "follower_id"
+    t.integer "following_id", null: false
+    t.integer "follower_id", null: false
     t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "room_ideas", force: :cascade do |t|
@@ -97,7 +93,7 @@ ActiveRecord::Schema.define(version: 2022_08_21_070114) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -111,7 +107,7 @@ ActiveRecord::Schema.define(version: 2022_08_21_070114) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
