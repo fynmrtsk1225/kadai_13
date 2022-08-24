@@ -1,16 +1,12 @@
-<table>
-  <tr>
-    <div class="nested-fields">
-      <td><label class="control-label">+</label></td>
-      <%= f.hidden_field :id %>
-      <div class=" btn btn-light dropdown p-0 mb-1">
-        <td><%= f.collection_select :tag_id, Tag.all, :id, :name, prompt: "タグを選択", class: 'form-control' %></td>
-      </div>
+<div class="nested-fields">
+  <label class="control-label">+</label>
+  <%= f.hidden_field :id %>
+  <div class=" btn btn-light dropdown p-0 mb-1">
+    <%= f.collection_select :tag_id, Tag.all, :id, :name, prompt: "タグを選択", class: 'form-control' %>
+  </div>
 
-      <td><%= link_to_remove_association "削除", f, id: 'remove-btn' %></td>
-    </div>
-  </tr>
-</table>
+  <%= link_to_remove_association "削除", f, id: 'remove-btn' %>
+</div>
 
 <script>
   $(document).on('turbolinks:load', function() {
