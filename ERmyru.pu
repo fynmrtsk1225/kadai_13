@@ -73,7 +73,7 @@ entity "**pictures**" as pictures	 {
   updated_at
 }
 
-entity "**favorited_pictures**" as favorited_pictures {
+entity "**favorite_pictures**" as favorited_pictures {
   + id [PK]
   # user_id [FK]
   # picture_id [FK]
@@ -93,7 +93,7 @@ entity "**products**" as products {
   updated_at
 }
 
-entity "**favorited_products**" as favorited_products {
+entity "**favorite_products**" as favorited_products {
   + id [PK]
   # user_id [FK]
   # product_id [FK]
