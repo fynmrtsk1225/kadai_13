@@ -32,11 +32,8 @@
           association_insertion_node: '#detail-association-insertion-point1',
           association_insertion_method: 'before' }
     %>
-
-  <br>
-  <br>
-
   </div>
+
   <div class="form-group" id='detail-association-insertion-point1'>
     <%= f.fields_for :picture_tags do |form| %>
       <%= render 'picture_tag_fields', f: form %>

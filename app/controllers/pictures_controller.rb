@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :sign_in_required
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
 

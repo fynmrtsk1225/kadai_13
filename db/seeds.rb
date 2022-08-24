@@ -57,6 +57,15 @@ User.all.each do |n|
   )
 end
 
+User.all.ids.sort.each do |following_id|
+  if following_id == 13
+    follower_id = "12"
+  else
+    follower_id = "13"
+  end
+  Relationship.create(following_id: following_id, follower_id: follower_id)
+end
+
 Tag.create!(name: "同棲")
 Tag.create!(name: "ファミリー")
 Tag.create!(name: "二世帯")
@@ -118,3 +127,17 @@ Product.create!(
   name: "THE CAFE TABLE",
   product_url: "https://kanademono.design/products/ctb-py-lino?variant=39548770123838&gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITWyNmhrB9jP8GRrJ24SzGq-_6prvA0u-xDAwFqLEz2dJHWH0rtXfzgaAgXZEALw_wcB",
 )
+
+3.times do |n|
+  User.all.ids.sort.each do |user_id|
+    picture_id = "#{n + 1}"
+    FavoritePicture.create(user_id: user_id, picture_id: picture_id)
+  end
+end
+
+3.times do |n|
+  User.all.ids.sort.each do |user_id|
+    product_id = "#{n + 1}"
+    FavoriteProduct.create(user_id: user_id,  product_id:  product_id)
+  end
+end

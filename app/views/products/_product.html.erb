@@ -11,6 +11,11 @@
 <% end %>
 <td><%= product.name %></td>
 <td><%= link_to "販売情報", "#{product.product_url}", target: :_blank %></td>
+<% unless product.image_url.present? %>
+  <td></td>
+<% else %>
+  <td><%= link_to "画像リンク", "#{product.image_url}", target: :_blank %></td>
+<% end %>
 <% if current_user.favorited_product_by?(product.id) %>
   <td><%= link_to image_tag('icon_heart_on.PNG', size: '40x40'), destroy_favorite_product_path(product), {method: :DELETE, remote: true, class: "heart"} %></td>
 <% else %>

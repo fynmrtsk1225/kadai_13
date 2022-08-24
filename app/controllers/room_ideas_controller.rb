@@ -1,5 +1,7 @@
 class RoomIdeasController < ApplicationController
+  before_action :sign_in_required
   before_action :set_room_idea, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_user, only: [:show, :edit, :update, :destroy]
 
   # GET /room_ideas
   def index
@@ -13,7 +15,7 @@ class RoomIdeasController < ApplicationController
   # GET /room_ideas/new
   def new
     @room_idea = RoomIdea.new
-  end
+  end 
 
   # GET /room_ideas/1/edit
   def edit
@@ -50,6 +52,12 @@ class RoomIdeasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_room_idea
       @room_idea = RoomIdea.find(params[:id])
+    end
+
+    def ensure_user
+      @users = current_user
+      @user = @room_idea.user
+      redirect_to room_ideas_path, notice: "他ユーザのroom閲覧・更新はできません" if @user != @users
     end
 
     # Only allow a trusted parameter "white list" through.
