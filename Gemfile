@@ -22,6 +22,7 @@ gem 'turbolinks', '~> 5'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# 追加gem
 gem 'devise'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'cancancan'
@@ -52,6 +53,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'launchy'
 end
 
 group :development do
