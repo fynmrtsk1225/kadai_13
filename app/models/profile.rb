@@ -1,6 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
   validates :content, length: { maximum: 255}
+  validates :image, presence: true
   mount_uploader :image, ImageUploader
   enum age: {'10代': 1, '20代': 2, '30代': 3, '40代': 4, '50代': 5, '60代': 6, '70代': 7, '80代~': 8}
   enum constitution: {Family: 1, Single: 2, Sharing: 3, Couple: 4, Other: 5}
