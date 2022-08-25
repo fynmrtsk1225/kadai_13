@@ -29,7 +29,7 @@ class PicturesController < ApplicationController
 
     if @picture.picture_tags.blank? == false
       if @picture.save
-        redirect_to @picture, notice: 'Picture was successfully created.'
+        redirect_to @picture, notice: 'Pictureが新規投稿されました！'
       else
         render :new
       end
@@ -42,7 +42,7 @@ class PicturesController < ApplicationController
   # PATCH/PUT /pictures/1
   def update
     if @picture.update(picture_params)
-      redirect_to @picture, notice: 'Picture was successfully updated.'
+      redirect_to @picture, notice: 'Pictureが更新されました！'
     else
       render :edit
     end
@@ -51,7 +51,7 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1
   def destroy
     @picture.destroy
-    redirect_to user_path(current_user.id), notice: 'Picture was successfully destroyed.'
+    redirect_to user_path(current_user.id), notice: 'Pictureが削除されました！'
   end
 
   def search

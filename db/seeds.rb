@@ -17,12 +17,20 @@ User.create!([
   { name: "do-buru", email: "do-buru@exam.com", password: "password11" },
 ])
 
+User.all.each do |n|
+  profile = n.build_profile
+  image = File.open("./public/profile_image/poke#{n.id}.png")
+  n.profile.update!(
+    image: image,
+  )
+end
+
 User.guest
 User.guest_admin
 
 User.all.each do |n|
-  profile = n.build_profile
-  image = File.open("./public/profile_image/poke#{n.id}.png")
+  profile = n.profile
+  image = n.profile.image
   content = "sample#{n.id}"
   age = '10代'
   constitution = 'Single'
