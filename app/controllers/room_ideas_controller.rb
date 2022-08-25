@@ -27,7 +27,7 @@ class RoomIdeasController < ApplicationController
     @room_idea.user_id = current_user.id
 
     if @room_idea.save
-      redirect_to @room_idea, notice: 'Room idea was successfully created.'
+      redirect_to @room_idea, notice: 'Room Ideaが新規投稿されました！'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class RoomIdeasController < ApplicationController
   # PATCH/PUT /room_ideas/1
   def update
     if @room_idea.update(room_idea_params)
-      redirect_to @room_idea, notice: 'Room idea was successfully updated.'
+      redirect_to @room_idea, notice: 'Room Ideaが更新されました！'
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class RoomIdeasController < ApplicationController
   # DELETE /room_ideas/1
   def destroy
     @room_idea.destroy
-    redirect_to room_ideas_url, notice: 'Room idea was successfully destroyed.'
+    redirect_to room_ideas_url, notice: 'Room Ideaが削除されました！'
   end
 
   private
