@@ -19,7 +19,7 @@ User.create!([
 
 User.all.each do |n|
   profile = n.build_profile
-  image = File.open("./public/profile_image/poke#{n.id}.png")
+  image = File.open("./public/profile_image/poke1.png")
   n.profile.update!(
     image: image,
   )
@@ -30,7 +30,7 @@ User.guest_admin
 
 User.all.each do |n|
   profile = n.profile
-  image = n.profile.image
+  image = File.open("./public/profile_image/poke#{n.id}.png")
   content = "sample#{n.id}"
   age = '10代'
   constitution = 'Single'
