@@ -226,8 +226,11 @@ header .left {
   left: -250px; /* checkboxを実装するとき */
   background: #969696;
   width: 250px;
-  height: 100%;
+  height: 630px;
   transition: all 0.5s;
+  overflow-y: scroll;
+  scrollbar-face-color: #999;
+  scrollbar-track-color: #eee;
 }
 
 .sidebar h2 {
@@ -240,13 +243,16 @@ header .left {
 }
 
 .sidebar tbody {
+  color: #fff;
+}
+
+.sidebar .idea {
   display: block;
   height: 100%;
   width: 100%;
+  margin: 5px;
   line-height: 65px;
   font-size: 20px;
-  color: #fff;
-  padding-left: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid black;
   transition: 0.4s;
@@ -275,9 +281,8 @@ label #btn {
 label #cancel {
   position: fixed;
   z-index: 10;
-  left: -210px; /* left: 195px; 見やすいように最初はこれ */
-  /* left: -195px; */
-  top: 137px;
+  left: -210px; /* left: 210px; 見やすいように最初はこれ */
+  top: 125px;
   font-size: 30px;
   color: #fff;
   transition: all 0.5s;
