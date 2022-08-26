@@ -71,21 +71,28 @@
       </nav>
     </header>
 
-    <main>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <main>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     
-    <div class="row">
       <% if user_signed_in? %>
-        <div class="col-2">
+      <!-- toggle section -->
+        <input type="checkbox" id="check" />
+        <label for="check">
+          <i class="arrow-right" id="btn">
+            <p>my room</p>
+          </i>
+          <i class="arrow-left" id="cancel"></i>
+        </label>
+        <div class="sidebar">
           <%= render'layouts/sidebar' %>
         </div>
       <% end %>
-    <div class="col-8">
+      
       <%= yield %>
-    </div>
     </main>
+    
     <footer>
       <p>運営会社DIVE INTO CODE株式会社</p>
       <p>© 2015-2018 Copyright DIVE INTO CODE Corp.</p>

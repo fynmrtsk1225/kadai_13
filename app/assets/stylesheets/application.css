@@ -179,10 +179,6 @@ header .left {
   background-color: transparent;
 }
 
-footer {
-  background-color: #c2c1c1;
-}
-
 .myru_image {
   padding-top: 30px;
 }
@@ -196,5 +192,115 @@ footer {
 }
 
 .can_myru p {
-    line-height: 30px;
+  line-height: 30px;
+}
+
+.arrow-right {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 8px 8px 0 0;
+  border-color: black;  
+  transform: rotate(45deg);
+}
+
+.arrow-left {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 0 0 8px 8px;
+  border-color: black;  
+  transform: rotate(45deg);
+}
+
+.sidebar {
+  position: fixed;
+  /* left: 0; */
+  left: -250px; /* checkboxを実装するとき */
+  background: #969696;
+  width: 250px;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  color: rgb(1, 1, 1);
+  text-align: center;
+  line-height: 70px;
+  background: #c2c1c1;
+  user-select: none;
+}
+
+.sidebar tbody {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: #fff;
+  padding-left: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid black;
+  transition: 0.4s;
+}
+
+#check {
+  display: none;
+}
+
+label #btn,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+label #btn {
+  position: fixed;
+  left: 30px;
+  top: 100px;
+  font-size: 25px;
+  color: rgb(1, 1, 1);
+  transition: all 0.5s;
+}
+
+label #cancel {
+  position: fixed;
+  z-index: 10;
+  left: -210px; /* left: 195px; 見やすいように最初はこれ */
+  /* left: -195px; */
+  top: 137px;
+  font-size: 30px;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+#check:checked ~ .sidebar {
+  left: 0;
+}
+
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+  left: 210px;
+}
+
+#check:checked ~ section {
+  margin-left: 250px;
+}
+
+
+footer {
+  background-color: #c2c1c1;
 }
