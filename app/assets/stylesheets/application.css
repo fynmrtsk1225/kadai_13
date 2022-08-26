@@ -182,7 +182,7 @@ header .left {
   background-color: transparent;
 }
 
-.sign_up_box {
+.account_box {
   width: 400px;
   height: 520px;
   background: rgba(223,223,223,0.3);
@@ -199,6 +199,16 @@ header .left {
   border-radius: 10px;
   margin: auto;
   margin-top: 100px;
+  padding-top: 10px;
+}
+
+.profile_box {
+  width: 400px;
+  height: 480px;
+  background: rgba(223,223,223,0.3);
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 50px;
   padding-top: 10px;
 }
 
