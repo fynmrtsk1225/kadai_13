@@ -136,6 +136,7 @@ header .left {
   padding: 10px 0px 10px;
   transition: all .3s;
   position: relative;
+  background:rgba(223,223,223,0.9);
 }
 
 .dropdown__list:not(:first-child)::before{
