@@ -46,6 +46,7 @@ header {
   left: 0;
   display: flex;
   align-items: center;
+  z-index: 10;
 }
 
 header .left {
@@ -92,6 +93,7 @@ header .left {
   height: 100%;
   letter-spacing: 0.05em;
   font-weight: 600;
+  z-index: 10;
 }
 
 .gnavi__list:not(:first-child)::before {
@@ -246,7 +248,7 @@ header .left {
   left: -250px; /* checkboxを実装するとき */
   background: #969696;
   width: 250px;
-  height: 630px;
+  height: 100%;
   transition: all 0.5s;
   overflow-y: scroll;
   scrollbar-face-color: #999;
@@ -326,7 +328,54 @@ label #cancel {
   margin-left: 250px;
 }
 
+.wrapper {
+  width: 82%;
+  display: flex;
+  margin: 20px auto;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.show_main, .show_side {
+  padding: 20px;
+}
+
+.show_main {
+  width: 90%;
+  margin-right: 300px;
+}
+
+.show_side {
+  width: 20%;
+  position: fixed;
+  right: 0px;
+}
+
+/* 2カラムコンテンツにする */
+
+.archive {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.archive div {
+  margin-bottom: 3rem;
+  padding: 3rem;
+  width: 35%;
+  background-color: #f0f0f0;
+}
+
+.archive td {
+  padding: 10px;
+}
+
+.archive img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 footer {
   background-color: #c2c1c1;
+  z-index: 10;
 }
