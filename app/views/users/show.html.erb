@@ -1,48 +1,52 @@
-<h1>about me</h1>
+<div class="wrapper">
+  <section class="show_main">
+    <h1>投稿</h1>
 
-<div id="user_<%= @user.id %>">
-  <%= render 'user', user: @user %>
+    <table>
+      <thead>
+        <tr>
+          <%  if @user.pictures.blank?  %>
+            <th><%= 'まだ投稿がありません' %></th>
+          <% else %>
+            <th></th>
+          <% end %>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody class="archive">
+        <% @user.pictures.each do |picture| %>
+          <tr>
+            <td><%= link_to image_tag(picture.image.url), picture, { class: "heart" } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="show_side">
+    <h1>about me</h1>
+
+    <div id="user_<%= @user.id %>">
+      <%= render 'user', user: @user %>
+    </div>
+
+    <%= link_to "フォロー #{@user.followings.count}人", follows_user_path(@user) %>
+    <%= link_to "フォロワー #{@user.followers.count}人", followers_user_path(@user) %>
+    <h3>自己紹介</h3>
+    <%= @user.profile.content %>
+    <%= '---' if @user.profile.content.blank? %>
+    <h4>年代</h4>
+    <%= @user.profile.age %>
+    <%= '---' if @user.profile.age.blank? %>
+    <h4>居住形態</h4>
+    <%= @user.profile.constitution %>
+    <%= '---' if @user.profile.constitution.blank? %>
+    <h4>間取り</h4>
+    <%= @user.profile.floor %>
+    <%= '---' if @user.profile.floor.blank? %>
+    <h4>広さ</h4>
+    <%= @user.profile.square %>
+    <%= '---' if @user.profile.square.blank? %>
+  </section>
 </div>
-
-<%= link_to "フォロー #{@user.followings.count}人", follows_user_path(@user) %>
-<%= link_to "フォロワー #{@user.followers.count}人", followers_user_path(@user) %>
-<h3>自己紹介</h3>
-<%= @user.profile.content %>
-<%= '---' if @user.profile.content.blank? %>
-<h4>年代</h4>
-<%= @user.profile.age %>
-<%= '---' if @user.profile.age.blank? %>
-<h4>居住形態</h4>
-<%= @user.profile.constitution %>
-<%= '---' if @user.profile.constitution.blank? %>
-<h4>間取り</h4>
-<%= @user.profile.floor %>
-<%= '---' if @user.profile.floor.blank? %>
-<h4>広さ</h4>
-<%= @user.profile.square %>
-<%= '---' if @user.profile.square.blank? %>
-
-
-<h1>投稿</h1>
-
-<table>
-  <thead>
-    <tr>
-      <%  if @user.pictures.blank?  %>
-        <th><%= 'まだ投稿がありません' %></th>
-      <% else %>
-        <th>Image</th>
-      <% end %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.pictures.each do |picture| %>
-      <tr>
-        <td><%= link_to image_tag(picture.image.url), picture, { class: "heart" } %></td>
-        <td><%= link_to 'Show', picture %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
