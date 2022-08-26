@@ -1,21 +1,28 @@
-<h1>myru</h1>
-<h3>「myru(マイル)」とは</h3>
-<h4>部屋作りに必要な工程を一括管理し、あなたをサポートするアプリです。</h4>
+<div class="homes" style="background:url(<%= asset_path 'top.png' %>); background-size:cover; background-position:center bottom; height: 785px;">
+  <%= image_tag 'myru.PNG', size: '200x170', class: "myru_image" %>
+  <div class="what_myru">
+    <h2>「myru(マイル)」とは</h2>
+    <h4>部屋作りに必要な工程を一括管理し、あなたをサポートするアプリです。</h4>
+  </div>
+    
+  <h2>あなたのアイデアを形にしましょう！</h2>
 
-<h3>あなたのアイデアを形にしましょう！</h3>
-<p>・欲しいものやアイデアをストックすることができます</p>
-<p>・画像から新しいアイデアを探すことができます</p>
-<p>・気に入った商品を購入することができます</p>
-<p>・アプリやwebサイトを行き来することなく部屋作りが完結します</p>
+  <div class="can_myru">
+    <p>・欲しいものやアイデアをストックすることができます</p>
+    <p>・画像から新しいアイデアを探すことができます</p>
+    <p>・気に入った商品を購入することができます</p>
+    <p>・アプリやwebサイトを行き来することなく部屋作りが完結します</p>
+  </div>
 
-<br>
+    <br>
 
-<% unless user_signed_in? %>
-  <h4>ゲストログインはこちら</h4>
-  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %> |
-  <%= link_to '管理者ログイン（管理用）', users_admin_guest_sign_in_path, method: :post %>
-<% else %>
-  <h3>理想の部屋をつくるには？</h3  >
-  <%= link_to 'アイデアを探す', pictures_path %> |
-  <%= link_to '欲しいものリストをつくる', new_room_idea_path %>
-<% end %>
+    <% unless user_signed_in? %>
+      <h4>ゲストログインはこちら</h4>
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %> |
+      <%= link_to '管理者ログイン（管理用）', users_admin_guest_sign_in_path, method: :post %>
+    <% else %>
+      <h3>理想の部屋をつくるには？</h3  >
+      <%= link_to 'アイデアを探す', pictures_path %> |
+      <%= link_to '欲しいものリストをつくる', new_room_idea_path %>
+    <% end %>
+</div>

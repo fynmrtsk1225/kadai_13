@@ -25,14 +25,14 @@ body {
   width: 100%;
   height: 100%;
   margin: 0px;
-  padding-top: 90px;
+  padding-top: 80px;
   display: flex;
   flex-flow: column;
   min-height: 100vh;
 }
 
 main {
-  flex: 1;
+  flex: 1 ;
 }
 
 header {
@@ -181,4 +181,20 @@ header .left {
 
 footer {
   background-color: #c2c1c1;
+}
+
+.myru_image {
+  padding-top: 30px;
+}
+
+.what_myru {
+  padding-top: 40px;
+}
+
+.can_myru {
+  padding-top: 10px;
+}
+
+.can_myru p {
+    line-height: 30px;
 }
