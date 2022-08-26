@@ -3,12 +3,12 @@
 <table>
   <tbody>
     <% current_user.room_ideas.each do |room_idea| %>
-      <tr>
-        <td>name:<%= room_idea.name %></td>
-        <td>color:<%= room_idea.color %></td>
-        <td>width:<%= room_idea.width %></td>
-        <td>depth:<%= room_idea.depth %></td>
-        <td>height:<%= room_idea.height %></td>
+      <tr class="idea">
+        <tr><td>name: <%= room_idea.name %></td></tr>
+        <tr><td>color: <%= room_idea.color %></td></tr>
+        <tr><td>width: <%= room_idea.width %></td></tr>
+        <tr><td>depth: <%= room_idea.depth %></td></tr>
+        <td>height: <%= room_idea.height %></td>
         <td><%= link_to 'Show', room_idea %></td>
       </tr>
     <% end %>

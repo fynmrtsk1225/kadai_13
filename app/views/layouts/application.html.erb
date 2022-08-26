@@ -13,41 +13,90 @@
   <body>
     <header>
       <nav>
-        <%= link_to 'myru(ロゴ)', homes_path %>
+        <%= link_to image_tag('myru.PNG', size: '70x40'), homes_path, {class: "left heart"} %>
         <% if user_signed_in? %>
-          <%= link_to "#{current_user.name}", user_path(current_user.id) %>
-          <%= link_to '新規投稿', new_picture_path %>
-          <%= link_to 'room', room_ideas_path %>
-          <%= link_to 'pictures', pictures_path %>
-          <%= link_to 'products', products_path %>
-          <%= link_to 'users', users_path %>
-          <%= link_to 'Pic❤', favorite_pictures_path %>
-          <%= link_to 'Pro❤', favorite_products_path %>
-          <%= link_to 'アカウント変更', edit_user_registration_path %>
-          <%= link_to 'プロフィール変更', edit_profile_path(current_user.id) %>
-          <% if current_user.try(:admin?) %>
-            <%= link_to "タグ管理画面", tags_path %>
-            <%= link_to "管理画面", rails_admin_path %>
-          <% end %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <div class="gnavi__wrap">
+            <ul class="gnavi__lists">
+              <li class="gnavi__list">
+                <%= link_to image_tag('users.png', size: '40x40', class: "head_icon"), users_path, {class: "heart"} %>
+                <ul class="dropdown__lists">
+                  <%= link_to "All Users", users_path, {class: "dropdown__list"} %>
+                </ul>
+              </li>
+              <li class="gnavi__list">
+                <%= link_to image_tag('picture.PNG', size: '42x42', class: "head_icon"), "#", {class: "heart"} %>
+                <ul class="dropdown__lists">
+                  <%= link_to "My Room Idea", room_ideas_path, {class: "dropdown__list"} %>
+                  <%= link_to "All Pictures", pictures_path, {class: "dropdown__list"} %>
+                  <%= link_to "All Products", products_path, {class: "dropdown__list"} %>
+                </ul>
+              </li>
+              <li class="gnavi__list">
+                <%= link_to image_tag('Bheart.PNG', size: '40x40', class: "head_icon"), "#", {class: "heart"} %>
+                <ul class="dropdown__lists">
+                  <%= link_to 'Favorite Picture', favorite_pictures_path, {class: "dropdown__list"} %>
+                  <%= link_to 'Favorite Product', favorite_products_path, {class: "dropdown__list"} %>
+                </ul>
+              </li>
+              <li class="gnavi__list">
+                <%= link_to image_tag('plus.PNG', size: '40x40', class: "head_icon"), "#", {class: "heart"} %>
+                <ul class="dropdown__lists">
+                  <%= link_to 'Picture', new_picture_path, {class: "dropdown__list"} %>
+                  <%= link_to 'Room Idea', new_room_idea_path, {class: "dropdown__list"} %>
+                </ul>
+              </li>
+              <li class="gnavi__list">
+                <%= link_to image_tag(current_user.profile.image.url, class: "rounded-circle", size: '50x50', class: "head_icon"), "#", {class: "heart"} %>
+                <ul class="dropdown__lists">
+                  <%= link_to 'マイページ', user_path(current_user), {class: "dropdown__list"} %>
+                  <%= link_to 'アカウント変更', edit_user_registration_path, {class: "dropdown__list"} %>
+                  <%= link_to 'プロフィール変更', edit_profile_path(current_user), {class: "dropdown__list"} %>
+                  <% if current_user.try(:admin?) %>
+                    <%= link_to "タグ管理", tags_path, {class: "dropdown__list"} %>
+                    <%= link_to "アプリ管理", rails_admin_path, {class: "dropdown__list"} %>
+                  <% end %>
+                  <%= link_to 'ログアウト', destroy_user_session_path, {method: :delete, class: "dropdown__list"} %>
+                </ul>
+              </li>
+            </ul>
+          </div>
         <% else %>
-          <%= link_to 'サインアップ', new_user_registration_path %>
-          <%= link_to 'ログイン', new_user_session_path %>
+          <div class="gnavi__wrap">
+            <ul class="gnavi__lists">
+              <li class="gnavi__list head_icon"><%= link_to 'サインアップ', new_user_registration_path, {class: "head_icon"} %></li>
+              <li class="gnavi__list head_icon"><%= link_to 'ログイン', new_user_session_path, {class: "head_icon"} %></li>
+            </ul>
+          </div>
         <% end %>
       </nav>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <main>
     
-    <div class="row">
       <% if user_signed_in? %>
-        <div class="col-2">
+      <!-- toggle section -->
+        <input type="checkbox" id="check" />
+        <label for="check">
+          <i class="arrow-right" id="btn">
+            <p>my room</p>
+          </i>
+          <i class="arrow-left" id="cancel"></i>
+        </label>
+        <div class="sidebar">
           <%= render'layouts/sidebar' %>
         </div>
       <% end %>
-    <div class="col-8">
+      
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      
       <%= yield %>
-    </div>
+    </main>
+    
+    <footer>
+      <p>運営会社DIVE INTO CODE株式会社</p>
+      <p>© 2015-2018 Copyright DIVE INTO CODE Corp.</p>
+    </footer>
   </body>
 </html>

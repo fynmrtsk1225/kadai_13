@@ -14,6 +14,299 @@
  *= require_self
  */
 
+html {
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding-top: 80px;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 ;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #c2c1c1;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+header .left {
+  float: left;
+  margin: 45px 80px 0px;
+}
+
+.gnavi__wrap {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.gnavi__lists {
+  display: flex;
+  float: right;
+  margin-top: 30px;
+}
+
+.head_icon {
+  padding: 10px 0px 20px;
+  margin: 0px 10px 0px;
+  text-decoration: none;
+  transition: all .3s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+}
+
+.head_icon:hover {
+  background-color: transparent;
+  color: #fcfcfc;
+}
+
+.gnavi__list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.gnavi__list:not(:first-child)::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s;
+}
+
+.gnavi__list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #2a2a2a;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  transition: all .3s;
+}
+
+.dropdown__lists {
+  display: none;
+  width: 400%;
+  padding-left: 0;
+  position: absolute;
+  top: 70px;
+}
+
+.gnavi__list:hover .dropdown__lists {
+  display: block;/*Gナビメニューにホバーしたら表示*/
+}
+
+.dropdown__list {
+  background-color: transparent;
+  height: 60px;
+  padding: 10px 0px 10px;
+  transition: all .3s;
+  position: relative;
+  background:rgba(223,223,223,0.9);
+}
+
+.dropdown__list:not(:first-child)::before{
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ababab;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dropdown__list:hover {
+  background-color: #2a2a2a;
+  color: #fcfcfc;
+}
+
+.dropdown__list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.dropdown__list a::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(135deg);
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 5px);
+}
+
 .heart:hover {
   background-color: transparent;
+}
+
+.myru_image {
+  padding-top: 30px;
+}
+
+.what_myru {
+  padding-top: 40px;
+}
+
+.can_myru {
+  padding-top: 10px;
+}
+
+.can_myru p {
+  line-height: 30px;
+}
+
+.arrow-right {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 8px 8px 0 0;
+  border-color: black;  
+  transform: rotate(45deg);
+}
+
+.arrow-left {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 0 0 8px 8px;
+  border-color: black;  
+  transform: rotate(45deg);
+}
+
+.sidebar {
+  position: fixed;
+  /* left: 0; */
+  left: -250px; /* checkboxを実装するとき */
+  background: #969696;
+  width: 250px;
+  height: 630px;
+  transition: all 0.5s;
+  overflow-y: scroll;
+  scrollbar-face-color: #999;
+  scrollbar-track-color: #eee;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  color: rgb(1, 1, 1);
+  text-align: center;
+  line-height: 70px;
+  background: #c2c1c1;
+  user-select: none;
+}
+
+.sidebar tbody {
+  color: #fff;
+}
+
+.sidebar .idea {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 5px;
+  line-height: 65px;
+  font-size: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid black;
+  transition: 0.4s;
+}
+
+#check {
+  display: none;
+}
+
+label #btn,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+label #btn {
+  position: fixed;
+  left: 30px;
+  top: 100px;
+  font-size: 25px;
+  color: rgb(1, 1, 1);
+  transition: all 0.5s;
+}
+
+label #cancel {
+  position: fixed;
+  z-index: 10;
+  left: -210px; /* left: 210px; 見やすいように最初はこれ */
+  top: 125px;
+  font-size: 30px;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+#check:checked ~ .sidebar {
+  left: 0;
+}
+
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+  left: 210px;
+}
+
+#check:checked ~ section {
+  margin-left: 250px;
+}
+
+
+footer {
+  background-color: #c2c1c1;
 }
