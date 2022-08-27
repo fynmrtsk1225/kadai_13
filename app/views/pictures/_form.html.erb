@@ -1,65 +1,77 @@
-<%= form_with(model: picture, local: true) do |f| %>
-  <% if picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+<div class="picture_form clearfix">
+  <%= form_with(model: picture, local: true) do |f| %>
+    <% if picture.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
 
-      <ul>
-        <% picture.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% picture.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="picture_main_form clearfix">
+      <div class="field">
+        <%= f.label :image %>
+        <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
+      </div>
+
+      <div class="field">
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+      </div>
+    </div>
+
+    <div class="picture_side_form">
+      <div class="picture_tag_field">
+        <h3>タグ ※1つ以上選択</h3>
+
+        <div class="d-flex justify-content-between">
+          <%= link_to_add_association 'タグ追加', f, :picture_tags,
+              class: 'btn btn-success  ml-1 p-1',
+              data: {
+                association_insertion_node: '#detail-association-insertion-point1',
+                association_insertion_method: 'before' }
+          %>
+        </div>
+
+        <div class="form-group" id='detail-association-insertion-point1'>
+          <%= f.fields_for :picture_tags do |form| %>
+            <%= render 'picture_tag_fields', f: form %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="product_field">
+        <h3>商品情報</h3>
+
+        <div class="d-flex justify-content-between">
+          <%= link_to_add_association '商品追加', f, :products,
+              class: 'btn btn-success  ml-1 p-1',
+              data: {
+                association_insertion_node: '#detail-association-insertion-point2',
+                association_insertion_method: 'append' }
+          %>
+        </div>
+
+        <div class="form-group" id='detail-association-insertion-point2'>
+          <%= f.fields_for :products do |form| %>
+            <%= render 'product_fields', f: form %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="picture_submit">
+      <div class="actions">
+        <%= f.submit %>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <h3>タグ ※1つ以上選択</h3>
-
-  <div class="d-flex justify-content-between">
-    <%= link_to_add_association 'タグ追加', f, :picture_tags,
-        class: 'btn btn-success  ml-1 p-1',
-        data: {
-          association_insertion_node: '#detail-association-insertion-point1',
-          association_insertion_method: 'before' }
-    %>
-  </div>
-
-  <div class="form-group" id='detail-association-insertion-point1'>
-    <%= f.fields_for :picture_tags do |form| %>
-      <%= render 'picture_tag_fields', f: form %>
-    <% end %>
-  </div>
-
-  <h3>商品情報</h3>
-
-  <div class="d-flex justify-content-between">
-    <%= link_to_add_association '商品追加', f, :products,
-        class: 'btn btn-success  ml-1 p-1',
-        data: {
-          association_insertion_node: '#detail-association-insertion-point2',
-          association_insertion_method: 'append' }
-    %>
-  </div>
-
-  <div class="form-group" id='detail-association-insertion-point2'>
-    <%= f.fields_for :products do |form| %>
-      <%= render 'product_fields', f: form %>
-    <% end %>
-  </div>
-
-  <br>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
