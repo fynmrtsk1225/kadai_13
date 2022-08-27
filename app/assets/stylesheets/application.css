@@ -349,12 +349,16 @@ label #cancel {
   margin-left: 250px;
 }
 
+.NewRecord＿Box {
+  padding-bottom: 10px;
+}
+
 .NewRecord＿Box h1 {
   margin-top: 200px;
 }
 
 .picture_form {
-  width: 60%;
+  width: 70%;
   margin-left: 300px;
   justify-content: center;
   background: rgba(223,223,223,0.3);
@@ -367,26 +371,29 @@ label #cancel {
 
 .picture_main_form {
   width: 20%;
+  height: 100%;
   position: fixed;
+  margin-top: 60px;
   margin-left: 55px;
   padding-right: 0;
 }
 
 .picture_side_form {
   width: 80%;
-  margin-left: 400px;
+  margin-left: 360px;
   justify-content: flex-start;
   display: flex;
   flex-wrap: wrap;
 }
 
 .picture_tag_field {
-  padding-right: 10px;
+  padding: 0 10px 0;
 }
 
 .picture_submit {
   width: 20%;
-  margin-left: 650px;
+  margin-left: 700px;
+  padding-bottom: 10px;
 }
 
 .NewRoomIdea h1 {
