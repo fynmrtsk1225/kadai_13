@@ -188,6 +188,11 @@ header .left {
   background-color: transparent;
 }
 
+textarea {
+  resize: vertical;
+  width: 200px;
+}
+
 .account_box {
   width: 400px;
   height: 520px;
@@ -384,9 +389,44 @@ label #cancel {
   margin-left: 650px;
 }
 
-.archive {
+.NewRoomIdea h1 {
+  margin-top: 150px;
+}
+
+.room_idea_form {
+  width: 60%;
+  margin-left: 300px;
+  justify-content: center;
+  background: rgba(223,223,223,0.3);
+  border-radius: 10px;
+}
+
+.room_idea_main_form, .room_idea_side_form, .room_idea_submit {
+  padding: 20px;
+}
+
+.room_idea_main_form {
+  width: 20%;
+  margin-top: 100px;
+  position: fixed;
+  margin-left: 55px;
+  padding-right: 0;
+}
+
+.room_idea_side_form {
+  margin-left: 400px;
+  justify-content: flex-start;  
   display: flex;
   flex-wrap: wrap;
+}
+
+.room_idea_side_form .field {
+  margin: 5px;
+}
+
+.room_idea_submit {
+  width: 20%;
+  margin-left: 650px;
 }
 
 .wrapper {
