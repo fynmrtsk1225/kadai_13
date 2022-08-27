@@ -195,12 +195,11 @@ textarea {
 
 .account_box {
   width: 400px;
-  height: 520px;
   background: rgba(223,223,223,0.3);
   border-radius: 10px;
   margin: auto;
   margin-top: 50px;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 .sign_in_box {
