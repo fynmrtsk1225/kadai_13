@@ -541,6 +541,11 @@ label #cancel {
   right: 0px;
 }
 
+.archive {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 footer {
   background-color: #c2c1c1;
   z-index: 10;
