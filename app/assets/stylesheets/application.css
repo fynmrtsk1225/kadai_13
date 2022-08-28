@@ -546,7 +546,23 @@ label #cancel {
   flex-wrap: wrap;
 }
 
+.all_pictures_main {
+  width: 80%;
+  margin: 20px auto;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.picture {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 footer {
   background-color: #c2c1c1;
   z-index: 10;
 }
+
+
+
+
