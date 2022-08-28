@@ -2,12 +2,10 @@
 
 <h1>Room Ideas</h1>
 
-<%= link_to 'New Room Idea', new_room_idea_path %>
-
 <br>
 <br>
 
-<table>
+<table class="all_room_idea">
   <thead>
     <tr>
       <th>Image</th>
@@ -31,18 +29,14 @@
         <% end %>
         <td><%= room_idea.name %></td>
         <td><%= room_idea.color %></td>
-        <td><%= room_idea.width %></td>
-        <td><%= room_idea.depth %></td>
-        <td><%= room_idea.height %></td>
+        <td><%= "#{room_idea.width}cm" %></td>
+        <td><%= "#{room_idea.depth}cm" %></td>
+        <td><%= "#{room_idea.height}cm" %></td>
         <td><%= room_idea.content %></td>
-        <td><%= link_to 'Show', room_idea %></td>
-        <td><%= link_to 'Edit', edit_room_idea_path(room_idea) %></td>
-        <td><%= link_to 'Destroy', room_idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', room_idea, {class: "button001"}  %></td>
+        <td><%= link_to 'Edit', edit_room_idea_path(room_idea), {class: "button001"} %></td>
+        <td><%= link_to 'Destroy', room_idea, {method: :delete, data: { confirm: 'Are you sure?' }, class: "button001"} %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Room Idea', new_room_idea_path %>
