@@ -1,4 +1,4 @@
-<div class="picture_form clearfix">
+<div class="picture_form">
   <%= form_with(model: picture, local: true) do |f| %>
     <% if picture.errors.any? %>
       <div class="error_explanation_original">
@@ -19,7 +19,6 @@
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
       </div>
-
     </div>
 
     <div class="picture_side_form">
