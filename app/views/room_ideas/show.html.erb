@@ -1,35 +1,34 @@
 <h1>Show</h1>
 
+<table class="all_room_idea">
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th>欲しいもの</th>
+      <th>カラー</th>
+      <th>縦幅</th>
+      <th>横幅</th>
+      <th>高さ</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <br>
+
+  <tbody>
+    <tr>
+      <td><%= image_tag @room_idea.image.url %></td>
+      <td><%= @room_idea.name %></td>
+      <td><%= @room_idea.color %></td>
+      <td><%= "#{@room_idea.width}cm" %></td>
+      <td><%= "#{@room_idea.depth}cm" %></td>
+      <td><%= "#{@room_idea.height}cm" %></td>
+    </tr>
+  </tbody>
+</table>
+
 <p>
-  <strong>Image:</strong>
-  <% if @room_idea.image.file == nil %>
-    <td><%= image_tag 'sample.png', size: '200x200' %></td>
-  <% else %>
-    <%= image_tag @room_idea.image.url %>
-  <% end %>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @room_idea.name %>
-</p>
-<p>
-  <strong>Color:</strong>
-  <%= @room_idea.color %>
-</p>
-<p>
-  <strong>Width:</strong>
-  <%= @room_idea.width %>
-</p>
-<p>
-  <strong>Depth:</strong>
-  <%= @room_idea.depth %>
-</p>
-<p>
-  <strong>Height:</strong>
-  <%= @room_idea.height %>
-</p>
-<p>
-  <strong>Content:</strong>
+  <strong>備考:</strong>
   <%= @room_idea.content %>
 </p>
 
