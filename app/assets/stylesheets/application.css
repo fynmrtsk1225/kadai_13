@@ -14,6 +14,86 @@
  *= require_self
  */
 
+.account .error_explanation_original {
+  border: 2px solid rgb(255, 205, 205);
+  padding: 7px 7px 0;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+}
+
+.tag .error_explanation_original {
+  width:fit-content;
+  border: 2px solid rgb(255, 205, 205);
+  padding: 7px 7px 0;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+}
+
+.profile .error_explanation_original {
+  width:fit-content;
+  border: 2px solid rgb(255, 205, 205);
+  padding: 7px 7px 0;
+  /* margin-bottom: 10px; */
+  margin: 0 0 10px 12px;
+  background-color: #f0f0f0;
+}
+
+.room_idea_form .error_explanation_original {
+  width:fit-content;
+  border: 2px solid rgb(255, 205, 205);
+  padding: 7px 7px 0;
+  margin-bottom: 10px;
+  margin-left: 220px;
+  background-color: #f0f0f0;
+}
+
+.picture_form .error_explanation_original {
+  width:fit-content;
+  border: 2px solid rgb(255, 205, 205);
+  padding: 7px 7px 0;
+  margin-bottom: 10px;
+  margin-left: 350px;
+  background-color: #f0f0f0;
+}
+
+.error_explanation_original h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: rgb(255, 205, 205);
+  color: #fff;
+}
+
+.error_explanation_original ul li {
+  font-size: 12px;
+  list-style: none;
+  text-align: left;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+.field_with_errors input {
+  border: 1px solid rgb(255, 205, 205);
+  border-radius: 3px;
+  background-color: rgb(255, 205, 205, 0.5);
+}
+
+.field_with_errors textarea {
+  border: 1px solid rgb(255, 205, 205);
+  border-radius: 3px;
+  background-color: rgb(255, 205, 205, 0.5);
+}
+
+.field_with_errors select {
+  border: 1px solid rgb(255, 205, 205);
+  border-radius: 3px;
+  background-color: rgb(255, 205, 205, 0.5);
+}
+
 .clearfix::after {
   content: “”;
   display: block;

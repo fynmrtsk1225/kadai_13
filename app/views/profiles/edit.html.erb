@@ -4,8 +4,8 @@
 
     <%= form_with(model: @profile, local: true) do |f| %>
       <% if @profile.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+        <div class="error_explanation_original">
+          <h2><%=@profile.errors.count %> 件のエラーが発生したため Profile は保存されませんでした。</h2>
 
           <ul>
             <% @profile.errors.full_messages.each do |message| %>

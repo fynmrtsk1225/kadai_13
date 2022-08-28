@@ -1,8 +1,8 @@
 <div class="room_idea_form">
   <%= form_with(model: room_idea, local: true) do |form| %>
     <% if room_idea.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(room_idea.errors.count, "error") %> prohibited this room_idea from being saved:</h2>
+      <div class="error_explanation_original">
+        <h2><%= room_idea.errors.count %>件のエラーが発生したため Room Idea は保存されませんでした。</h2>
 
         <ul>
           <% room_idea.errors.full_messages.each do |message| %>
