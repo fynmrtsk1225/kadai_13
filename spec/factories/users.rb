@@ -1,11 +1,12 @@
 FactoryBot.define do
   factory :user do
-    association :profile
     name { 'test00' }
     email { 'test00@exam.com' }
     password { 'test00' }
     admin { true }
+    id {'0'}
   end
+
   factory :second_user, class: User do
     association :profile
     user { profile.user }
