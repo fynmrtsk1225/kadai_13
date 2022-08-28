@@ -2,6 +2,8 @@
 
 <div id="picture_<%= @picture.id %>">
   <%= render 'picture', picture: @picture %>
+  <br>
+  <%= @picture.content %>
 </div>
 
 <% if @picture.user == current_user %>
@@ -11,5 +13,3 @@
   <td></td>
   <td></td>
 <% end %>
-
-<%= link_to 'MyPage', user_path(current_user.id) %>
