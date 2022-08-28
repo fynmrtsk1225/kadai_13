@@ -1,9 +1,9 @@
-<h1>Show</h1>
+<h1>投稿詳細</h1>
 
 <div id="picture_<%= @picture.id %>">
   <%= render 'picture', picture: @picture %>
   <br>
-  <%= @picture.content %>
+  コメント：<%= @picture.content %>
 </div>
 
 <% if @picture.user == current_user %>
