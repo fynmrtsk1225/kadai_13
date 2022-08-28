@@ -104,6 +104,19 @@ Picture.all.ids.sort.each do |picture_id|
   PictureTag.create(picture_id: picture_id, tag_id: tag_id)
 end
 
+10.times do |n|
+  image = File.open("./public/picture_image/picture#{n + 1}.jpeg")
+  content = "guest sample#{n + 1}"
+  picture_id = "#{n + 14}"
+  tag_id = "#{n + 1}"
+  Picture.create!(
+    user_id: "12",
+    image: image,
+    content: content,
+  )
+  PictureTag.create(picture_id: picture_id, tag_id: tag_id)
+end
+
 Product.create!(
   picture_id: "5",
   name: "SINNERLIG スィネリグ",
