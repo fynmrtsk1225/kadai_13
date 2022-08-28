@@ -5,7 +5,6 @@
     <h3>投稿検索</h3>
 
     <%= search_form_for @picture_q, url: search_pictures_path do |f| %>
-      <%= f.label :tags_id_eq, 'Tags Name' %>
       <%= f.collection_select :tags_id_eq, @tags, :id, :name, include_blank: 'タグ選択' %>
       
       <%= f.submit '検索' %>
