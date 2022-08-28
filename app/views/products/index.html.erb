@@ -3,11 +3,12 @@
 <h3>商品検索</h3>
 
 <%= search_form_for @product_q, url: search_products_path do |f| %>
-  <%= f.label :name_cont, 'Product Name' %>
-  <%= f.search_field :name_cont %>
+  <%= f.search_field :name_cont, placeholder: "商品名" %>
   
   <%= f.submit '検索' %>
 <% end %>
+
+  <br>
 
 <table class="all_product">
   <thead>
