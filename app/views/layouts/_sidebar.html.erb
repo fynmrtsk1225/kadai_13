@@ -1,15 +1,15 @@
-<h2>my room</h2>
+<h2>マイアイデア</h2>
 
 <table>
   <tbody>
     <% current_user.room_ideas.each do |room_idea| %>
       <tr class="idea">
-        <tr><td>name: <%= room_idea.name %></td></tr>
-        <tr><td>color: <%= room_idea.color %></td></tr>
-        <tr><td>width: <%= room_idea.width %></td></tr>
-        <tr><td>depth: <%= room_idea.depth %></td></tr>
-        <td>height: <%= room_idea.height %></td>
-        <td><%= link_to 'Show', room_idea %></td>
+        <tr><td>欲しいもの: <%= room_idea.name %></td></tr>
+        <tr><td>カラー: <%= room_idea.color %></td></tr>
+        <tr><td>縦幅: <%= room_idea.width %></td></tr>
+        <tr><td>横幅: <%= room_idea.depth %></td></tr>
+        <td>高さ: <%= room_idea.height %></td>
+        <td><%= link_to '詳細', room_idea %></td>
       </tr>
     <% end %>
   </tbody>
