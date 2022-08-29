@@ -22,27 +22,27 @@
     </div>
     <div class="room_idea_side_form">
       <div class="field">
-        <%= form.label :name %>
+        <%= form.label :name, class: "required" %>
         <%= form.text_field :name, placeholder: "例）テーブル" %>
       </div>
       <div class="field">
-        <%= form.label :color %>
+        <%= form.label :color, class: "required_none" %>
         <%= form.text_field :color, placeholder: "例）ホワイト" %>
       </div>
       <div class="field">
-        <%= form.label :width %>
+        <%= form.label :width, class: "required_none" %>
         <%= form.text_field :width, placeholder: "例）70" %>cm
       </div>
       <div class="field">
-        <%= form.label :depth %>
+        <%= form.label :depth, class: "required_none" %>
         <%= form.text_field :depth, placeholder: "例）120" %>cm
       </div>
       <div class="field">
-        <%= form.label :height %>
+        <%= form.label :height, class: "required_none" %>
         <%= form.text_field :height, placeholder: "例）120" %>cm
       </div>
       <div class="field">
-        <%= form.label :content %>
+        <%= form.label :content, class: "required_none" %>
         <%= form.text_area :content, placeholder: "例）高さが変えられると良い" %>
       </div>
     </div>

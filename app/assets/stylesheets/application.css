@@ -14,6 +14,40 @@
  *= require_self
  */
 
+.required::after {
+  content: "必須";
+  background-color: #fe494953;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 10px;
+  padding: 3px 7px;
+  margin: 3px 5px 5px;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.required_none::after {
+  content: "none";
+  background-color: #fe494900;
+  color: rgba(255, 255, 255, 0);
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 10px;
+  padding: 3px 7px;
+  margin: 3px 5px 5px;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+}
+
 .account .error_explanation_original {
   border: 2px solid rgb(255, 205, 205);
   padding: 7px 7px 0;
@@ -303,6 +337,10 @@ textarea {
   padding: 10px;
 }
 
+.sign_up_field {
+  margin-bottom: 10px;
+}
+
 .myru_image {
   padding-top: 30px;
 }
@@ -456,13 +494,13 @@ label #cancel {
   height: 100%;
   position: fixed;
   margin-top: 60px;
-  margin-left: 55px;
+  margin-left: 20px;
   padding-right: 0;
 }
 
 .picture_side_form {
   width: 80%;
-  margin-left: 360px;
+  margin-left: 310px;
   justify-content: flex-start;
   display: flex;
   flex-wrap: wrap;

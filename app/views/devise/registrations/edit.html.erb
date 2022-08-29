@@ -6,12 +6,12 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       
       <div class="field">
-        <%= f.label :name %><br />
+        <%= f.label :name, class: "required" %>
         <%= f.text_field :name, autofocus: true, placeholder: "ユーザ名" %>
       </div>
       
-      <div class="field">
-        <%= f.label :email %><br />
+      <div class="sign_up_field">
+        <%= f.label :email, class: "required" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "xxxx@xxx.com" %>
       </div>
 
@@ -19,7 +19,7 @@
         <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
       <% end %>
 
-      <div class="field">
+      <div class="sign_up_field">
         <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
         <%= f.password_field :password, autocomplete: "new-password", placeholder: "新しいパスワード" %>
         <% if @minimum_password_length %>
@@ -28,13 +28,13 @@
         <% end %>
       </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
+      <div class="sign_up_field">
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "新しいパスワード" %>
       </div>
 
-      <div class="field">
-        <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
+      <div class="sign_up_field">
+        <%= f.label :current_password, class: "required" %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
         <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワード" %>
       </div>
 

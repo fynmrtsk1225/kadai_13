@@ -3,12 +3,12 @@
   <%= f.hidden_field :id %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, class: "required" %>
     <%= f.text_area :name, placeholder: "例）ペンダントランプ" %>
   </div>
 
   <div class="field">
-    <%= f.label :product_url %>
+    <%= f.label :product_url, class: "required" %>
     <%= f.text_field :product_url, placeholder: "例）https://***" %>
   </div>
 

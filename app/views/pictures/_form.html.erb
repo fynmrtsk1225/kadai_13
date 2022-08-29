@@ -14,7 +14,7 @@
 
     <div class="picture_main_form clearfix">
       <div class="field">
-        <%= f.label :image %>
+        <%= f.label :image, class: "required" %>
         <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
@@ -27,7 +27,7 @@
         <%= f.text_area :content, placeholder: "例）人気商品買いました！" %>
       </div>
       <div class="picture_tag_field">
-        <h3>タグ ※1つ以上選択</h3>
+        <h3 class="required">タグ ※1つ以上選択</h3>
 
         <div class="d-flex justify-content-between">
           <%= link_to_add_association 'タグ追加', f, :picture_tags,
