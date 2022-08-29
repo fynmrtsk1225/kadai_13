@@ -1,8 +1,8 @@
-<h1>Product Show</h1>
+<h1>商品詳細</h1>
 
 <div id="product_<%= @product.id %>">
   <%= render 'product', product: @product %>
 </div>
 
 <br>
-<%= link_to 'MyPage', user_path(current_user.id) %>
+<%= link_to 'マイページ', user_path(current_user.id) %>
