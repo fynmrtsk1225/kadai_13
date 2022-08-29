@@ -561,6 +561,11 @@ label #cancel {
   flex-wrap: wrap;
 }
 
+.search_picture {
+  width: 80%;
+  margin-left: 250px;
+}
+
 .all_room_idea {
   margin: auto;
 }

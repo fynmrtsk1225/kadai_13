@@ -5,16 +5,16 @@ require 'romaji'
 require "romaji/core_ext/string"
 
 User.create!([
-  { name: "eipamu", email: "eipamu@exam.com", password: "password2" },
-  { name: "a-bo", email: "a-bo@exam.com", password: "password3" },
-  { name: "kabutopusu", email: "kabutopusu@exam.com", password: "password4" },
-  { name: "omunaito", email: "omunaito@exam.com", password: "password5" },
-  { name: "riza-do", email: "riza-do@exam.com", password: "password6" },
-  { name: "monjara", email: "monjara@exam.com", password: "password7" },
-  { name: "zenigame", email: "zenigame@exam.com", password: "password8" },
-  { name: "kapoera-", email: "kapoera-@exam.com", password: "password9" },
-  { name: "supia-", email: "supia-@exam.com", password: "password10" },
-  { name: "do-buru", email: "do-buru@exam.com", password: "password11" },
+  { name: "エイパム", email: "eipamu@exam.com", password: "password2" },
+  { name: "アーボ", email: "a-bo@exam.com", password: "password3" },
+  { name: "カブトプス", email: "kabutopusu@exam.com", password: "password4" },
+  { name: "オムナイト", email: "omunaito@exam.com", password: "password5" },
+  { name: "リザード", email: "riza-do@exam.com", password: "password6" },
+  { name: "モンジャラ", email: "monjara@exam.com", password: "password7" },
+  { name: "ゼニガメ", email: "zenigame@exam.com", password: "password8" },
+  { name: "カポエラー", email: "kapoera-@exam.com", password: "password9" },
+  { name: "スピアー", email: "supia-@exam.com", password: "password10" },
+  { name: "ドーブル", email: "do-buru@exam.com", password: "password11" },
 ])
 
 User.all.each do |n|
