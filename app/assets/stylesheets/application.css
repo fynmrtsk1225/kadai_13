@@ -300,6 +300,11 @@ header nav {
   top: calc(50% - 5px);
 }
 
+.rounded-circle {
+  border-radius: 50%;
+  background-position: center center;
+}
+
 .heart:hover {
   background-color: transparent;
 }
