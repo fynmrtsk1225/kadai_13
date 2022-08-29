@@ -5,9 +5,9 @@
 <% end %>
 <td><%= link_to "#{product.picture.user.name}", user_path(product.picture.user.id) %></td>
 <% unless product.image.present? %>
-  <td><%= link_to image_tag('sample.png', size: '250x250'), product_path(product.id), {class: "heart"} %></td>
+  <td><%= link_to image_tag('sample.png', size: '250x250', class: 'spec_product'), product_path(product.id), {class: "heart"} %></td>
 <% else %>
-  <td><%= link_to image_tag(product.image.url), product_path(product.id), {class: "heart"} %></td>
+  <td><%= link_to image_tag(product.image.url, class: 'spec_product'), product_path(product.id), {class: "heart"} %></td>
 <% end %>
 <td><%= product.name %></td>
 <td><br><%= link_to "販売情報", "#{product.product_url}", {target: :_blank, class: "button001"} %></td>

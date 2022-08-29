@@ -17,7 +17,7 @@
       <tbody class="archive">
         <% @user.pictures.each do |picture| %>
           <tr>
-            <td><%= link_to image_tag(picture.image.url), picture, { class: "heart" } %></td>
+            <td><%= link_to image_tag(picture.image.url, class: 'spec_picture'), picture, { class: "heart" } %></td>
           </tr>
         <% end %>
       </tbody>
