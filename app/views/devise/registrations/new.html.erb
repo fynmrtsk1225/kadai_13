@@ -7,24 +7,24 @@
 
       <%= f.fields_for :profile do |f| %>
         <div class="field">
-          <%= f.label :image %><br />
+          <%= f.label :image, class: "required" %>
           <%= f.file_field :image %>
           <%= f.hidden_field :image_cache %>
         </div>
       <% end %>
 
       <div class="sign_up_field">
-        <%= f.label :name %><br />
+        <%= f.label :name, class: "required" %>
         <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
       </div>
 
       <div class="sign_up_field">
-        <%= f.label :email %><br />
+        <%= f.label :email, class: "required" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "xxxx@xxx.com" %>
       </div>
 
       <div class="sign_up_field">
-        <%= f.label :password %>
+        <%= f.label :password, class: "required" %>
         <% if @minimum_password_length %>
         <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
         <% end %><br />
@@ -32,7 +32,7 @@
       </div>
 
       <div class="sign_up_field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用" %>
       </div>
 

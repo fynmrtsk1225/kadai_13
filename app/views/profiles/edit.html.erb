@@ -16,7 +16,7 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :image %>
+        <%= f.label :image, class: "required" %>
         <%= image_tag(@profile.image.url, class: "rounded-circle", size: "100x100") if @profile.image && @profile.image.url %>
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
