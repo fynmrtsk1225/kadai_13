@@ -27,7 +27,7 @@ class RoomIdeasController < ApplicationController
     @room_idea.user_id = current_user.id
 
     if @room_idea.save
-      redirect_to @room_idea, notice: 'Room Ideaが新規投稿されました！'
+      redirect_to @room_idea, notice: 'ルームアイデアが新規作成されました！'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class RoomIdeasController < ApplicationController
   # PATCH/PUT /room_ideas/1
   def update
     if @room_idea.update(room_idea_params)
-      redirect_to @room_idea, notice: 'Room Ideaが更新されました！'
+      redirect_to @room_idea, notice: 'ルームアイデアが更新されました！'
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class RoomIdeasController < ApplicationController
   # DELETE /room_ideas/1
   def destroy
     @room_idea.destroy
-    redirect_to room_ideas_url, notice: 'Room Ideaが削除されました！'
+    redirect_to room_ideas_url, notice: 'ルームアイデアが削除されました！'
   end
 
   private
@@ -57,7 +57,7 @@ class RoomIdeasController < ApplicationController
     def ensure_user
       @users = current_user
       @user = @room_idea.user
-      redirect_to room_ideas_path, notice: "他ユーザのroom閲覧・更新はできません" if @user != @users
+      redirect_to room_ideas_path, notice: "他ユーザのルームアイデア閲覧・更新はできません" if @user != @users
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -2,7 +2,7 @@
   <%= form_with(model: room_idea, local: true) do |form| %>
     <% if room_idea.errors.any? %>
       <div class="error_explanation_original">
-        <h2><%= room_idea.errors.count %>件のエラーが発生したため Room Idea は保存されませんでした。</h2>
+        <h2><%= room_idea.errors.count %>件のエラーが発生したため ルームアイデア は保存されませんでした。</h2>
 
         <ul>
           <% room_idea.errors.full_messages.each do |message| %>

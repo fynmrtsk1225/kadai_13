@@ -1,19 +1,21 @@
-<h1>followers</h1>
+<h1>フォロワー</h1>
 
 <h3>ユーザー検索</h3>
 
 <%= search_form_for @user_q, url: search_users_path do |f| %>
-  <%= f.label :name_cont, 'User Name' %>
+  <%= f.label :name_cont, 'ユーザ名' %>
   <%= f.search_field :name_cont %>
   
   <%= f.submit '検索' %>
 <% end %>
 
-<table>
+<br>
+
+<table class="all_room_idea">
   <thead>
     <tr>
-      <th>Icon</th>
-      <th>Name</th>
+      <th>アイコン</th>
+      <th>ユーザ名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -27,4 +29,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Profile', user_path(@user) %>
+<%= link_to 'プロフィールに戻る', user_path(@user) %>
