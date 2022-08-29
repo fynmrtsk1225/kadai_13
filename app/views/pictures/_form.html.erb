@@ -2,7 +2,7 @@
   <%= form_with(model: picture, local: true) do |f| %>
     <% if picture.errors.any? %>
       <div class="error_explanation_original">
-        <h2><%= picture.errors.count %> 件のエラーが発生したため Picture は保存されませんでした。</h2>
+        <h2><%= picture.errors.count %> 件のエラーが発生したため 投稿 は保存されませんでした。</h2>
 
         <ul>
           <% picture.errors.full_messages.each do |message| %>
