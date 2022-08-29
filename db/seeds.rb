@@ -65,12 +65,70 @@ User.all.each do |n|
   )
 end
 
+4.times do |n|
+  name = "#{Faker::House.furniture}"
+  color = "#{Faker::Color.color_name}"
+  width = "#{Faker::Number.number(digits: 2)}"
+  depth = "#{Faker::Number.number(digits: 2)}"
+  height = "#{Faker::Number.number(digits: 3)}"
+  image = File.open("./public/idea_image/room#{n + 1}.jpeg")
+  content = "sample#{n + 14}"
+  RoomIdea.create!(
+    user_id: "12",
+    name:        name,
+    color:      color,
+    width:      width,
+    depth:      depth,
+    height:    height,
+    image:      image,
+    content:  content,
+  )
+end
+
+4.times do |n|
+  name = "#{Faker::House.furniture}"
+  color = "#{Faker::Color.color_name}"
+  width = "#{Faker::Number.number(digits: 2)}"
+  depth = "#{Faker::Number.number(digits: 2)}"
+  height = "#{Faker::Number.number(digits: 3)}"
+  image = File.open("./public/idea_image/room#{n + 1}.jpeg")
+  content = "sample#{n + 14}"
+  RoomIdea.create!(
+    user_id: "13",
+    name:        name,
+    color:      color,
+    width:      width,
+    depth:      depth,
+    height:    height,
+    image:      image,
+    content:  content,
+  )
+end
+
 User.all.ids.sort.each do |following_id|
   if following_id == 13
     follower_id = "12"
   else
     follower_id = "13"
   end
+  Relationship.create(following_id: following_id, follower_id: follower_id)
+end
+
+10.times do |n|
+  follower_id = "12"
+  following_id = "#{n + 1}"
+  Relationship.create(following_id: following_id, follower_id: follower_id)
+end
+
+10.times do |n|
+  follower_id = "#{n + 1}"
+  following_id = "12"
+  Relationship.create(following_id: following_id, follower_id: follower_id)
+end
+
+10.times do |n|
+  follower_id = "#{n + 1}"
+  following_id = "13"
   Relationship.create(following_id: following_id, follower_id: follower_id)
 end
 
@@ -117,6 +175,19 @@ end
   PictureTag.create(picture_id: picture_id, tag_id: tag_id)
 end
 
+10.times do |n|
+  image = File.open("./public/picture_image/picture#{n + 1}.jpeg")
+  content = "guest admin sample#{n + 1}"
+  picture_id = "#{n + 24}"
+  tag_id = "#{n + 1}"
+  Picture.create!(
+    user_id: "13",
+    image: image,
+    content: content,
+  )
+  PictureTag.create(picture_id: picture_id, tag_id: tag_id)
+end
+
 Product.create!(
   picture_id: "5",
   name: "SINNERLIG スィネリグ",
@@ -149,14 +220,14 @@ Product.create!(
   product_url: "https://kanademono.design/products/ctb-py-lino?variant=39548770123838&gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITWyNmhrB9jP8GRrJ24SzGq-_6prvA0u-xDAwFqLEz2dJHWH0rtXfzgaAgXZEALw_wcB",
 )
 
-3.times do |n|
+5.times do |n|
   User.all.ids.sort.each do |user_id|
     picture_id = "#{n + 1}"
     FavoritePicture.create(user_id: user_id, picture_id: picture_id)
   end
 end
 
-3.times do |n|
+5.times do |n|
   User.all.ids.sort.each do |user_id|
     product_id = "#{n + 1}"
     FavoriteProduct.create(user_id: user_id,  product_id:  product_id)

@@ -1,6 +1,9 @@
 ---
 ja:
   activerecord:
+    user: 
+    tag: 
+    room_idea: 
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
