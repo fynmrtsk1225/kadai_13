@@ -7,7 +7,7 @@
 </div>
 
 <% if @picture.user == current_user %>
-  <%= link_to 'Edit', edit_picture_path(@picture) %> |
+  <%= link_to '編集', edit_picture_path(@picture) %> |
   <%= link_to '削除', @picture, method: :delete, data: { confirm: '削除してもいいですか?'} %> |
 <% else %>
   <td></td>
