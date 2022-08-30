@@ -1,31 +1,63 @@
-<h1>フォロー</h1>
+<div class="all_picture">
+  <h1>フォロー</h1>
 
-<h3>ユーザー検索</h3>
+  <h3>ユーザー検索</h3>
 
-<%= search_form_for @user_q, url: search_users_path do |f| %>
-  <%= f.search_field :name_cont, placeholder: "ユーザー名" %>
-  
-  <%= f.submit '検索' %>
-<% end %>
+  <%= search_form_for @user_q, url: search_users_path do |f| %>
+    <%= f.search_field :name_cont, placeholder: "ユーザー名" %>
+    
+    <%= f.submit '検索' %>
+  <% end %>
 
-<br>
+  <br><br>
 
-<table class="all_room_idea">
-  <thead>
-    <tr>
-      <th>アイコン</th>
-      <th>ユーザ名</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table class="user_title">
+    <th>アイコン</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <th>ユーザ名</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <th>アイコン</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <th>ユーザ名</th>
+  </table>
 
-  <tbody>
+  <section class="all_pictures_main">
     <% @users.each do |user| %>
-      <tr id="user_<%= user.id %>">
-        <%= render 'user', user: user %>
-      </tr>
+      <div class="user-container">
+        <table id="user_<%= user.id %>">
+          <%= render 'user', user: user %>
+        </table>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </section>
 
-<%= link_to 'プロフィールに戻る', user_path(@user) %>
+  <%= link_to 'プロフィールに戻る', user_path(@user) %>
+</div>
