@@ -3,7 +3,7 @@ class FavoriteProductsController < ApplicationController
   before_action :set_product, only: [:create, :destroy]
 
   def index
-    @favorite_products = current_user.favorited_products
+    @favorite_products = current_user.favorited_products.order("id DESC")
   end
 
   def create

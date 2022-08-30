@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_q, only: [:index, :follows, :followers, :search]
   
   def index
-    @users = User.all
+    @users = User.all.order("id DESC")
   end
 
   def show

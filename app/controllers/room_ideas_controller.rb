@@ -5,7 +5,7 @@ class RoomIdeasController < ApplicationController
 
   # GET /room_ideas
   def index
-    @room_ideas = current_user.room_ideas.all
+    @room_ideas = current_user.room_ideas.all.order("id DESC")
   end
 
   # GET /room_ideas/1

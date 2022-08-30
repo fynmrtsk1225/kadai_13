@@ -5,7 +5,7 @@ class TagsController < ApplicationController
 
   # GET /tags
   def index
-    @tags = Tag.all
+    @tags = Tag.all.order("id DESC")
   end
 
   # GET /tags/1
