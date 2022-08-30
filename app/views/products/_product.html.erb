@@ -3,7 +3,7 @@
 <% else %>
   <td><%= image_tag product.picture.user.profile.image.url, class: "rounded-circle", size: "100x100" %></td>
 <% end %>
-<td><%= link_to "#{product.picture.user.name}", user_path(product.picture.user.id) %></td>
+<td><%= link_to "#{product.picture.user.name}", user_path(product.picture.user.id), {class: "picture_index_icon"} %></td>
 <% unless product.image.present? %>
   <td><%= link_to image_tag('sample.png', size: '250x250', class: 'spec_product'), product_path(product.id), {class: "heart"} %></td>
 <% else %>

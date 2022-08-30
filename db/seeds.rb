@@ -148,6 +148,26 @@ Tag.create!(name: "シンプル")
 Tag.create!(name: "おしゃれ")
 Tag.create!(name: "かわいい")
 
+10.times do |n|
+  image = File.open("./public/picture_image/picture#{n + 1}.jpeg")
+  content = "guest sample#{n + 1}"
+  Picture.create!(
+    user_id: "12",
+    image: image,
+    content: content,
+  )
+end
+
+10.times do |n|
+  image = File.open("./public/picture_image/picture#{n + 1}.jpeg")
+  content = "guest admin sample#{n + 1}"
+  Picture.create!(
+    user_id: "13",
+    image: image,
+    content: content,
+  )
+end
+
 User.all.each do |n|
   image = File.open("./public/picture_image/picture#{n.id}.jpeg")
   content = "sample#{n.id}"
@@ -158,33 +178,13 @@ User.all.each do |n|
 end
 
 Picture.all.ids.sort.each do |picture_id|
-  tag_id = picture_id
-  PictureTag.create(picture_id: picture_id, tag_id: tag_id)
-end
-
-10.times do |n|
-  image = File.open("./public/picture_image/picture#{n + 1}.jpeg")
-  content = "guest sample#{n + 1}"
-  picture_id = "#{n + 14}"
-  tag_id = "#{n + 1}"
-  Picture.create!(
-    user_id: "12",
-    image: image,
-    content: content,
-  )
-  PictureTag.create(picture_id: picture_id, tag_id: tag_id)
-end
-
-10.times do |n|
-  image = File.open("./public/picture_image/picture#{n + 1}.jpeg")
-  content = "guest admin sample#{n + 1}"
-  picture_id = "#{n + 24}"
-  tag_id = "#{n + 1}"
-  Picture.create!(
-    user_id: "13",
-    image: image,
-    content: content,
-  )
+  if picture_id <= 15
+    tag_id = picture_id
+  elsif picture_id.even? && picture_id >= 16
+    tag_id = 5
+  else
+    tag_id = 2
+  end
   PictureTag.create(picture_id: picture_id, tag_id: tag_id)
 end
 
@@ -222,7 +222,7 @@ Product.create!(
 
 5.times do |n|
   User.all.ids.sort.each do |user_id|
-    picture_id = "#{n + 1}"
+    picture_id = "#{n + n + 20}"
     FavoritePicture.create(user_id: user_id, picture_id: picture_id)
   end
 end
