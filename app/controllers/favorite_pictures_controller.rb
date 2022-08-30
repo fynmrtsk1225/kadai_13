@@ -3,7 +3,7 @@ class FavoritePicturesController < ApplicationController
   before_action :set_picture, only: [:create, :destroy]
 
   def index
-    @favorite_pictures = current_user.favorited_pictures
+    @favorite_pictures = current_user.favorited_pictures.order("id DESC")
   end
 
   def create

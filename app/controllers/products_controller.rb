@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    @products = Product.all
+    @products = Product.all.order("id DESC")
   end
 
   def show

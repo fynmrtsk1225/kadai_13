@@ -67,7 +67,7 @@ class PicturesController < ApplicationController
   def set_q
     @picture_q = Picture.ransack(params[:q])
     @tags = Tag.all
-    @pictures = @picture_q.result.includes(:tags)
+    @pictures = @picture_q.result.includes(:tags).order("id DESC")
   end
 
   def picture_params
