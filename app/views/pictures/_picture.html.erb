@@ -1,13 +1,27 @@
 <% unless picture.user.profile.image.present? %>
-  <td><%= image_tag 'guest.png', size: '200x200', class: "rounded-circle", size: "50x50" %></td>
-  <td><%= link_to "#{picture.user.name}", user_path(picture.user.id) %></td>
+  <tr>
+    <td>
+      <%= image_tag 'guest.png', size: '200x200', class: "rounded-circle", size: "50x50" %>
+      <%= link_to "#{picture.user.name}", user_path(picture.user.id) %>
+    </td>
+  </tr>
 <% else %>
-  <td><%= image_tag picture.user.profile.image.url, class: "rounded-circle", size: "50x50" %></td>
-  <td><%= link_to "#{picture.user.name}", user_path(picture.user.id) %></td>
+  <tr>
+    <td>
+      <%= image_tag picture.user.profile.image.url, class: "rounded-circle", size: "50x50" %>
+      <%= link_to "#{picture.user.name}", user_path(picture.user.id), {class: "picture_index_icon"} %>
+    </td>
+  </tr>
 <% end %>
-<td><%= link_to image_tag(picture.image.url), picture_path(picture.id), {class: "heart"} %></td>
+<tr>
+  <td><%= link_to image_tag(picture.image.url, size: "300x300"), picture_path(picture.id), {class: "heart"} %></td>
+</tr>
 <% if current_user.favorited_picture_by?(picture.id) %>
-  <td><%= link_to image_tag('icon_heart_on.PNG', size: '50x50'), destroy_favorite_picture_path(picture), {method: :DELETE, remote: true, class: "heart"} %></td>
+  <tr>
+    <td><%= link_to image_tag('icon_heart_on.PNG', size: '50x50'), destroy_favorite_picture_path(picture), {method: :DELETE, remote: true, class: "heart"} %></td>
+  </tr>
 <% else %>
-  <td><%= link_to image_tag('icon_heart_off.PNG', size: '50x50'), create_favorite_picture_path(picture), {method: :POST, remote: true, class: "heart"} %></td>
+  <tr>
+    <td><%= link_to image_tag('icon_heart_off.PNG', size: '50x50'), create_favorite_picture_path(picture), {method: :POST, remote: true, class: "heart"} %></td>
+  </tr>
 <% end %>

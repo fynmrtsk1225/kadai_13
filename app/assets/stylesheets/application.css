@@ -596,14 +596,28 @@ label #cancel {
 
 .all_pictures_main {
   width: 80%;
+  height: 80%;
   margin: 20px auto;
   margin-right: 10px;
-  justify-content: center;
 }
 
-.picture {
-  display: flex;
-  flex-wrap: wrap;
+.picture-container {
+  float: left;
+  margin: 5px;
+}
+
+.picture-container td .rounded-circle {
+  float: left;
+}
+
+.picture-container td .picture_index_icon {
+  float: left;
+  padding: 5px;
+  margin: 10px 10px;
+}
+
+.picture-container td .heart {
+  float: right;
 }
 
 .search_picture {

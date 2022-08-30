@@ -12,14 +12,12 @@
   </section>
 
   <section class="all_pictures_main">
-    <table>
-      <tbody class="picture">
-        <% @pictures.each do |picture| %>
-          <tr id="picture_<%= picture.id %>">
-            <%= render 'picture', picture: picture %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% @pictures.each do |picture| %>
+      <div class="picture-container">
+        <table id="picture_<%= picture.id %>">
+          <%= render 'picture', picture: picture %>
+        </table>
+      </div>
+    <% end %>
   </section>
 </div>
