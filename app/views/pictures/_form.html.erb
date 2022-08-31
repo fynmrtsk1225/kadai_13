@@ -26,6 +26,8 @@
         <%= f.label :content %>
         <%= f.text_area :content, placeholder: "例）人気商品買いました！" %>
       </div>
+
+      <%# タグ追加フォーム %>
       <div class="picture_tag_field">
         <h3 class="required">タグ ※1つ以上選択</h3>
 
@@ -33,18 +35,19 @@
           <%= link_to_add_association 'タグ追加', f, :picture_tags,
               class: 'btn btn-success  ml-1 p-1',
               data: {
-                association_insertion_node: '#detail-association-insertion-point1',
-                association_insertion_method: 'before' }
+                association_insertion_node: '#detail-association-insertion-point1', #どのフォームを追加するか指定
+                association_insertion_method: 'before' } #どこにフォームを追加するか指定
           %>
         </div>
 
         <div class="form-group" id='detail-association-insertion-point1'>
-          <%= f.fields_for :picture_tags do |form| %>
-            <%= render 'picture_tag_fields', f: form %>
+          <%= f.fields_for :picture_tags do |form| %> <%# 中間テーブルのフォーム %>
+            <%= render 'picture_tag_fields', f: form %> <%# htmlファイルを呼ぶ %>
           <% end %>
         </div>
       </div>
 
+      <%# 商品追加フォーム %>
       <div class="product_field">
         <h3>商品情報</h3>
 
