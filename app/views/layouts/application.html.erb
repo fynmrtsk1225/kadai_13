@@ -15,45 +15,45 @@
       <nav>
         <%= link_to image_tag('myru.PNG', size: '70x40'), homes_path, {class: "left heart"} %>
         <% if user_signed_in? %>
-          <div class="gnavi__wrap">
-            <ul class="gnavi__lists">
-              <li class="gnavi__list">
+          <div class="gnavi__wrap"> <%# 右側のヘッダーエリア %>
+            <ul class="gnavi__lists"> <%# 全ての親リスト %>
+              <li class="gnavi__list"> <%# ①親リスト 1個のアイコン %>
                 <%= link_to image_tag('users.png', size: '40x40', class: "head_icon"), users_path, {class: "heart"} %>
-                <ul class="dropdown__lists">
-                  <%= link_to "全てのユーザ", users_path, {class: "dropdown__list"} %>
+                <ul class="dropdown__lists"> <%# ホバーで出てくる全ての ①子リスト %>
+                  <%= link_to "全てのユーザ", users_path, {class: "dropdown__list"} %> <%# ①子リスト1 %>
                 </ul>
               </li>
-              <li class="gnavi__list">
+              <li class="gnavi__list"> <%# ②親リスト %>
                 <%= link_to image_tag('picture.PNG', size: '42x42', class: "head_icon spec_all_icon"), "#", {class: "heart"} %>
-                <ul class="dropdown__lists">
-                  <%= link_to "私のアイデア", room_ideas_path, {class: "dropdown__list"} %>
-                  <%= link_to "全ての投稿", pictures_path, {class: "dropdown__list"} %>
-                  <%= link_to "全ての商品", products_path, {class: "dropdown__list"} %>
+                <ul class="dropdown__lists"> <%# ②子リスト %>
+                  <%= link_to "私のアイデア", room_ideas_path, {class: "dropdown__list"} %> <%# ②子リスト1 %>
+                  <%= link_to "全ての投稿", pictures_path, {class: "dropdown__list"} %> <%# ②子リスト2 %>
+                  <%= link_to "全ての商品", products_path, {class: "dropdown__list"} %> <%# ②子リスト3 %>
                 </ul>
               </li>
-              <li class="gnavi__list">
+              <li class="gnavi__list"> <%# ③親リスト %>
                 <%= link_to image_tag('Bheart.PNG', size: '40x40', class: "head_icon"), "#", {class: "heart"} %>
-                <ul class="dropdown__lists">
-                  <%= link_to 'お気に入り投稿', favorite_pictures_path, {class: "dropdown__list"} %>
-                  <%= link_to 'お気に入り商品', favorite_products_path, {class: "dropdown__list"} %>
+                <ul class="dropdown__lists"> <%# ③子リスト %>
+                  <%= link_to 'お気に入り投稿', favorite_pictures_path, {class: "dropdown__list"} %> <%# ②子リスト1 %>
+                  <%= link_to 'お気に入り商品', favorite_products_path, {class: "dropdown__list"} %> <%# ②子リスト2 %>
                 </ul>
               </li>
-              <li class="gnavi__list">
+              <li class="gnavi__list"> <%# ④親リスト %>
                 <%= link_to image_tag('plus.PNG', size: '40x40', class: "head_icon"), "#", {class: "heart"} %>
-                <ul class="dropdown__lists">
-                  <%= link_to '新規投稿', new_picture_path, {class: "dropdown__list"} %>
-                  <%= link_to 'アイデア作成', new_room_idea_path, {class: "dropdown__list"} %>
+                <ul class="dropdown__lists"> <%# ④子リスト %>
+                  <%= link_to '新規投稿', new_picture_path, {class: "dropdown__list"} %> <%# ④子リスト1 %>
+                  <%= link_to 'アイデア作成', new_room_idea_path, {class: "dropdown__list"} %> <%# ④子リスト2 %>
                 </ul>
               </li>
-              <li class="gnavi__list">
+              <li class="gnavi__list"> <%# ⑤親リスト %>
                 <%= link_to image_tag(current_user.profile.image.url, size: '50x50', class: "head_icon spec_icon rounded-circle"), "#", {class: "heart"} %>
-                <ul class="dropdown__lists">
-                  <%= link_to 'マイページ', user_path(current_user), {class: "dropdown__list"} %>
-                  <%= link_to 'アカウント変更', edit_user_registration_path, {class: "dropdown__list"} %>
-                  <%= link_to 'プロフィール変更', edit_profile_path(current_user), {class: "dropdown__list"} %>
+                <ul class="dropdown__lists"> <%# ⑤子リスト %>
+                  <%= link_to 'マイページ', user_path(current_user), {class: "dropdown__list"} %> <%# ⑤子リスト1 %>
+                  <%= link_to 'アカウント変更', edit_user_registration_path, {class: "dropdown__list"} %> <%# ⑤子リスト2 %>
+                  <%= link_to 'プロフィール変更', edit_profile_path(current_user), {class: "dropdown__list"} %> <%# ⑤子リスト3 %>
                   <% if current_user.try(:admin?) %>
-                    <%= link_to "タグ管理", tags_path, {class: "dropdown__list"} %>
-                    <%= link_to "アプリ管理", rails_admin_path, {class: "dropdown__list"} %>
+                    <%= link_to "タグ管理", tags_path, {class: "dropdown__list"} %> <%# ⑤子リスト4 %>
+                    <%= link_to "アプリ管理", rails_admin_path, {class: "dropdown__list"} %> <%# ⑤子リスト5 %>
                   <% end %>
                   <%= link_to 'ログアウト', destroy_user_session_path, {method: :delete, class: "dropdown__list"} %>
                 </ul>

@@ -15,7 +15,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
-    @picture_tags = @picture.picture_tags.build    
+    @picture_tags = @picture.picture_tags.build # @pictureを使って中間テーブルであるpicture_tagsをbuild
   end
 
   # GET /pictures/1/edit
@@ -24,7 +24,7 @@ class PicturesController < ApplicationController
 
   # POST /pictures
   def create
-    @picture = Picture.new(picture_params)    
+    @picture = Picture.new(picture_params) # パラメータにnewした内容が入っているので同時保存できる
     @picture.user_id = current_user.id
 
     if @picture.picture_tags.blank? == false
@@ -73,7 +73,7 @@ class PicturesController < ApplicationController
   def picture_params
     params.require(:picture).permit(:image, :image_cache, :content,
                                     products_attributes: [:id, :picture_id, :name, :product_url, :image_url, :image, :image_cache, :_destroy],
-                                    picture_tags_attributes: [:id, :tag_id, :_destroy]
+                                    picture_tags_attributes: [:id, :tag_id, :_destroy] #　アソシエーションを組んだモデルのパラメータ設定
     )
   end
 end

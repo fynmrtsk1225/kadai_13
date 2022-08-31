@@ -9,9 +9,9 @@
 </div>
 
 <script>
-  $(document).on('turbolinks:load', function() {
-    if ($('.nested-fields').length == 1) {
-      $('#remove-btn').hide();
+  $(document).on('turbolinks:load', function() { //初回読み込み、リロード、ページ切り替えでhtml読み込み
+    if ($('.nested-fields').length == 1) {       //タグ追加フォームが1つだった時
+      $('#remove-btn').hide();                   //削除ボタンを隠す
     }
 });
 </script> 
